@@ -41,24 +41,22 @@
 
             <!-- Header Section -->
             <section class="privacy-header-section">
-                <div class="privacy-hero-card">
-                    <div class="app-showcase">
-                        <div class="app-icon-wrapper">
-                            <div class="loading-skeleton app-icon-placeholder">
-                                <div class="icon-shimmer"></div>
-                            </div>
-                            <img alt="App icon" loading="lazy" width="120" height="120" decoding="async"
-                                class="app-icon appIconLarge headerIcon" src="" style="display: none;" />
+                <div class="app-showcase">
+                    <div class="app-icon-wrapper">
+                        <div class="loading-skeleton app-icon-placeholder">
+                            <div class="icon-shimmer"></div>
                         </div>
-                        <div class="app-info">
-                            <div class="app-header">
-                                <h1 class="privacy-title">
-                                    <span class="appName headerName loading-text">Loading...</span> Privacy Policy
-                                </h1>
-                                <p class="app-description appDescription loading-text">
-                                    Loading app information...
-                                </p>
-                            </div>
+                        <img alt="App icon" loading="lazy" width="120" height="120" decoding="async"
+                            class="app-icon appIconLarge headerIcon" src="" style="display: none;" />
+                    </div>
+                    <div class="app-info">
+                        <div class="app-header">
+                            <h1 class="privacy-title">
+                                <span class="appName headerName loading-text">Loading...</span> Privacy Policy
+                            </h1>
+                            <p class="app-description appDescription loading-text">
+                                Loading app information...
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -249,11 +247,9 @@
             $(".appName").html(appInfo.trackCensoredName || appInfo.trackName);
             $(".headerName").html(appInfo.trackCensoredName || appInfo.trackName);
 
-            // Set description from app store data
-            const shortDesc = appInfo.description.length > 100 ?
-                appInfo.description.substring(0, 100) + "..." :
-                appInfo.description;
-            $(".appDescription").html(shortDesc);
+            // Set description (first line only)
+            const firstLine = appInfo.description.split('.')[0] + '.';
+            $(".appDescription").html(firstLine);
 
             console.info("Privacy page updated with app data:", appInfo);
         }

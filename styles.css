@@ -31,7 +31,8 @@ body {
     margin: 0;
     line-height: inherit;
     font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
-    background: #000000;
+    background: #0a0a0f;
+    background: linear-gradient(135deg, #0a0a0f 0%, #1a0a1f 50%, #0f0a1a 100%);
     color: #ffffff;
     overflow-x: hidden;
 }
@@ -69,8 +70,8 @@ video {
     position: fixed;
     inset: 0;
     z-index: -1;
-    background: radial-gradient(ellipse at top, rgba(16, 16, 40, 0.4) 0%, rgba(0, 0, 0, 0.8) 50%, #000000 100%);
-    opacity: 0.8;
+    background: radial-gradient(ellipse at top, rgba(26, 10, 31, 0.6) 0%, rgba(10, 10, 15, 0.9) 50%, #0a0a0f 100%);
+    opacity: 0.9;
 }
 
 .rain {
@@ -113,28 +114,15 @@ video {
     flex-direction: column;
     gap: 2rem;
     align-items: center;
-}
-
-.hero-card {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 24px;
-    padding: 2.5rem;
-    width: 100%;
-    transition: all 0.3s ease;
-}
-
-.hero-card:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.12);
-    transform: translateY(-2px);
+    margin-bottom: 2rem;
 }
 
 .app-showcase {
     display: flex;
     align-items: flex-start;
     gap: 2rem;
+    width: 100%;
+    max-width: 800px;
 }
 
 .app-icon-wrapper {
@@ -225,68 +213,67 @@ video {
 
 .download-section {
     display: flex;
+    gap: 1rem;
     align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .download-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: none;
     border: none;
-    border-radius: 16px;
-    padding: 1rem 2rem;
+    padding: 0;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 1rem;
+    justify-content: center;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+    height: 40px;
 }
 
 .download-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 32px rgba(102, 126, 234, 0.4);
-    background: linear-gradient(135deg, #7c8ef7 0%, #8b5eb8 100%);
+    transform: translateY(-1px) scale(1.05);
 }
 
-.download-icon {
-    height: 24px;
+.download-btn img {
+    height: 40px;
     width: auto;
-    opacity: 0.5;
-    transition: opacity 0.3s ease;
+    opacity: 0.9;
+    transition: all 0.3s ease;
 }
 
-.download-text {
-    font-weight: 600;
+.download-btn:hover img {
+    opacity: 1;
 }
 
-/* Badge Section */
-.badge-section {
-    display: flex;
-    justify-content: center;
-}
-
-.product-hunt-badge {
+.product-hunt-btn {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     padding: 0.75rem 1.5rem;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     color: rgba(255, 255, 255, 0.8);
     font-weight: 500;
     font-size: 0.875rem;
     text-decoration: none;
     transition: all 0.3s ease;
+    height: 40px;
+    min-width: 160px;
 }
 
-.product-hunt-badge:hover {
+.product-hunt-btn:hover {
     background: rgba(255, 255, 255, 0.05);
     border-color: rgba(255, 255, 255, 0.2);
     color: #ffffff;
     transform: translateY(-1px);
+}
+
+.download-icon {
+    opacity: 0.9;
+    transition: all 0.3s ease;
 }
 
 .ph-icon {
@@ -375,16 +362,20 @@ video {
     transform: translateY(-2px);
 }
 
-.feature-image {
+.feature-image-container {
     flex-shrink: 0;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .settings-image {
-    width: 280px;
-    height: 280px;
+    width: 320px;
+    height: 320px;
     border-radius: 20px;
     object-fit: cover;
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .feature-content {
@@ -406,6 +397,27 @@ video {
     font-size: 1rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.7);
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.feature-list li {
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.dynamic-content {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* FAQ Section */
@@ -533,7 +545,6 @@ video {
         gap: 3rem;
     }
 
-    .hero-card,
     .demo-card,
     .feature-card {
         padding: 1.5rem;
@@ -551,15 +562,28 @@ video {
         justify-content: center;
     }
 
+    .download-section {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .product-hunt-btn {
+        min-width: 160px;
+    }
+
     .feature-card {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
 
+    .feature-image-container {
+        padding: 1rem;
+    }
+
     .settings-image {
-        width: 240px;
-        height: 240px;
+        width: 280px;
+        height: 280px;
     }
 
     .faq-grid {
@@ -577,7 +601,6 @@ video {
         padding: 0 0.75rem;
     }
 
-    .hero-card,
     .demo-card,
     .feature-card,
     .faq-card {
@@ -588,9 +611,23 @@ video {
         font-size: 1.5rem;
     }
 
+    .download-section {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+    }
+
+    .product-hunt-btn {
+        min-width: 180px;
+    }
+
+    .feature-image-container {
+        padding: 0.5rem;
+    }
+
     .settings-image {
-        width: 200px;
-        height: 200px;
+        width: 240px;
+        height: 240px;
     }
 
     .footer-content {
@@ -709,21 +746,7 @@ a:focus-visible {
     justify-content: center;
 }
 
-.privacy-hero-card {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 24px;
-    padding: 2.5rem;
-    width: 100%;
-    transition: all 0.3s ease;
-}
 
-.privacy-hero-card:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.12);
-    transform: translateY(-2px);
-}
 
 .privacy-title {
     font-size: 2rem;
@@ -820,8 +843,6 @@ a:focus-visible {
 
 /* Privacy Page Responsive Design */
 @media (max-width: 768px) {
-
-    .privacy-hero-card,
     .privacy-card {
         padding: 1.5rem;
     }
@@ -838,7 +859,7 @@ a:focus-visible {
         font-size: 1rem;
     }
 
-    .app-showcase {
+    .privacy-header-section .app-showcase {
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -847,8 +868,6 @@ a:focus-visible {
 }
 
 @media (max-width: 480px) {
-
-    .privacy-hero-card,
     .privacy-card {
         padding: 1.25rem;
     }
