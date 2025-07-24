@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title class="pageTitle">Privacy Policy - NotchNest</title>
+    <meta name="description" content="Privacy Policy" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" sizes="16x16" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="notchnest-body">
+    <!-- Rain animation background -->
+    <figure
+        class="rain pix pointer-events-none fixed inset-0 z-50 m-0 h-dvh w-dvw -scale-x-[1] bg-repeat opacity-20 mix-blend-overlay">
+    </figure>
+
+    <main class="flex min-h-dvh justify-center overflow-x-hidden bg-black">
+        <div class="flex w-full max-w-[628px] flex-col gap-4 px-2 pt-20 xs:px-6">
+            <header>
+                <a class="inline-flex items-center justify-center text-sm font-medium transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-transparent text-[#FFDEA2] rounded-xl border-[2px] border-[#FFDEA2] h-10 px-4 py-2 hover:text-glow hover:border-glow"
+                    href="index.html">&lt;- go back</a>
+            </header>
+
+            <section class="relative">
+                <header class="flex flex-col gap-4">
+                    <article class="flex items-start gap-4 header-container">
+                        <div class="app-icon-container">
+                            <div class="loading-skeleton -m-2 notch-icon"
+                                style="width: 130px; height: 130px; border-radius: 20px;"></div>
+                            <img alt="App icon" loading="lazy" width="130" height="130" decoding="async"
+                                class="-m-2 notch-icon appIconLarge headerIcon" src="" style="display: none;" />
+                        </div>
+                        <div class="w-full app-content">
+                            <h1 class="text-lg font-bold text-white md:text-xl">
+                                <span class="appName headerName loading-text">Loading...</span> Privacy Policy
+                            </h1>
+                            <p class="text-sm text-[#92919a] appDescription loading-text">
+                                Loading app information...
+                            </p>
+                        </div>
+                    </article>
+                </header>
+
+                <div class="mt-10 flex flex-col gap-4">
+                    <article class="faq-item">
+                        <div class="font-bold text-white mb-2">
+                            <h3>Privacy Policy</h3>
+                        </div>
+                        <div class="text-sm text-[#92919a] space-y-4">
+                            <p>This privacy policy explains how we collect, use, and protect your information when you
+                                use our macOS application available on the App Store.</p>
+
+                            <h4 class="text-white font-semibold mt-4">Zero Data Collection</h4>
+                            <p>We are committed to protecting your privacy. Our app collects <strong>zero personal
+                                    data</strong>.
+                                We don't have servers, analytics, tracking, or any data collection mechanisms. The app
+                                operates
+                                entirely locally on your device.</p>
+
+                            <h4 class="text-white font-semibold mt-4">App Store Software</h4>
+                            <p>This application is distributed exclusively through the Apple App Store. By downloading
+                                and using
+                                this app, you agree to Apple's terms of service and privacy policies in addition to this
+                                policy.</p>
+
+                            <h4 class="text-white font-semibold mt-4">Local Operation</h4>
+                            <p>The app operates entirely on your device without any network connections or data
+                                transmission.
+                                All functionality is contained within the application itself, ensuring complete privacy.
+                            </p>
+
+                            <h4 class="text-white font-semibold mt-4">Refunds and Purchases</h4>
+                            <p>All purchases, subscriptions, and refund requests are handled directly by Apple through
+                                the App Store.
+                                We do not process payments or have access to your payment information. For refunds,
+                                contact Apple Support
+                                or use the "Report a Problem" feature in your App Store account.</p>
+
+                            <h4 class="text-white font-semibold mt-4">Third-Party Services</h4>
+                            <p>Our app does not integrate with any third-party analytics, advertising, tracking
+                                services, or external APIs.
+                                The only third-party involved is Apple's App Store for distribution and payment
+                                processing.</p>
+
+                            <h4 class="text-white font-semibold mt-4">Changes to This Policy</h4>
+                            <p>We may update this privacy policy from time to time. Any changes will be reflected in the
+                                app and on this page. Since we collect no data, policy changes primarily relate to
+                                clarifications
+                                rather than changes in data handling.</p>
+
+                            <h4 class="text-white font-semibold mt-4">Contact Us</h4>
+                            <p>If you have any questions about this privacy policy, please contact us at <a
+                                    href="mailto:29satnam@gmail.com" class="text-glow text-white">29satnam@gmail.com</a>
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <footer class="mb-4 flex items-center justify-center text-sm text-[#92919a]">
+                <div class="flex flex-col gap-0 text-center sm:flex-row sm:gap-2">
+                    <span>send us a letter!</span>
+                    <a href="mailto:29satnam@gmail.com">
+                        <span class="text-glow">29satnam@gmail.com</span>
+                    </a>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <!-- App Store API Integration with Caching -->
+    <script>
+        // App ID constant for easy management
+        const APP_ID = "6742724228";
+        const CACHE_KEY = "notchnest_app_data";
+        const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes in milliseconds
+
+        // Loading skeleton styles
+        const loadingSkeletonCSS = `
+            .loading-skeleton {
+                background: linear-gradient(90deg, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 75%);
+                background-size: 200% 100%;
+                animation: loading-shimmer 2s infinite;
+            }
+            
+            @keyframes loading-shimmer {
+                0% { background-position: -200% 0; }
+                100% { background-position: 200% 0; }
+            }
+            
+            .loading-text {
+                color: rgba(255, 255, 255, 0.5) !important;
+            }
+        `;
+
+        // Add loading styles
+        const styleSheet = document.createElement('style');
+        styleSheet.textContent = loadingSkeletonCSS;
+        document.head.appendChild(styleSheet);
+
+        // Cache management functions
+        function getCachedData() {
+            try {
+                const cached = localStorage.getItem(CACHE_KEY);
+                if (cached) {
+                    const data = JSON.parse(cached);
+                    const now = new Date().getTime();
+                    if (now - data.timestamp < CACHE_DURATION) {
+                        console.info("Using cached app data");
+                        return data.appInfo;
+                    }
+                }
+            } catch (e) {
+                console.warn("Error reading cache:", e);
+            }
+            return null;
+        }
+
+        function setCachedData(appInfo) {
+            try {
+                const cacheData = {
+                    appInfo: appInfo,
+                    timestamp: new Date().getTime()
+                };
+                localStorage.setItem(CACHE_KEY, JSON.stringify(cacheData));
+                console.info("App data cached successfully");
+            } catch (e) {
+                console.warn("Error caching data:", e);
+            }
+        }
+
+        // Update UI with app data
+        function updateUI(appInfo) {
+            // Remove loading states
+            document.querySelectorAll('.loading-skeleton').forEach(el => {
+                el.classList.remove('loading-skeleton');
+            });
+
+            document.querySelectorAll('.loading-text').forEach(el => {
+                el.classList.remove('loading-text');
+            });
+
+            // Set favicon
+            $('link[rel="shortcut icon"]').attr("href", appInfo.artworkUrl512);
+
+            // Set page title
+            document.title = appInfo.trackName + " - Privacy Policy - NotchNest";
+
+            // Set app icon
+            const $appIcon = $(".appIconLarge");
+            $appIcon.attr("src", appInfo.artworkUrl512).show();
+            $(".app-icon-container .loading-skeleton").hide();
+
+            // Set app name
+            $(".appName").html(appInfo.trackCensoredName || appInfo.trackName);
+            $(".headerName").html(appInfo.trackCensoredName || appInfo.trackName);
+
+            // Set description from app store data
+            const shortDesc = appInfo.description.length > 100 ?
+                appInfo.description.substring(0, 100) + "..." :
+                appInfo.description;
+            $(".appDescription").html(shortDesc);
+
+            console.info("Privacy page updated with app data:", appInfo);
+        }
+
+        // Main initialization function
+        $(function () {
+            // Try to load from cache first
+            const cachedData = getCachedData();
+            if (cachedData) {
+                updateUI(cachedData);
+                return;
+            }
+
+            // Fetch from API if no cache
+            const apiURL = "https://itunes.apple.com/lookup?id=" + APP_ID + "&callback=?";
+
+            $.getJSON(apiURL, function (json) {
+                if (json.results && json.results.length) {
+                    const appInfo = json.results[0];
+
+                    // Cache the data
+                    setCachedData(appInfo);
+
+                    // Update UI
+                    updateUI(appInfo);
+                } else {
+                    console.error("No app data found");
+                    // Keep loading states if API fails
+                }
+            }).fail(function () {
+                console.error("Failed to fetch app data from iTunes API");
+                // Keep loading states if API fails
+            });
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

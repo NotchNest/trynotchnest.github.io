@@ -1,0 +1,43 @@
+# GitHub Pages Configuration for NotchNest Landing Page
+
+# Site settings
+title: "NotchNest"
+description: "Dynamic app landing page powered by App Store API"
+url: "https://codetard.github.io"
+baseurl: "/trynotchnest"
+
+# App Store Integration
+ios_app_id: "6742724228"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# GitHub Pages specific settings
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - .jekyll-metadata
+  - original_site
+
+# Include files
+include:
+  - assets
+
+# Default values
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default" 
