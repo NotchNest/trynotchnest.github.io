@@ -3,8 +3,9 @@
 # Site settings
 title: "NotchNest"
 description: "Dynamic app landing page powered by App Store API"
-url: "https://codetard.github.io"
-baseurl: "/trynotchnest"
+url: "https://notchnest.github.io"
+baseurl: ""
+email: "29satnam@gmail.com"
 
 # App Store Integration
 ios_app_id: "6742724228"
