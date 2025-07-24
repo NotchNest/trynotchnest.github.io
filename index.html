@@ -21,141 +21,144 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="theme-color" content="#000000" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body class="notchnest-body">
+    <!-- Subtle background animation -->
+    <div class="background-gradient"></div>
+
     <!-- Rain animation background -->
     <figure
-        class="rain pix pointer-events-none fixed inset-0 z-50 m-0 h-dvh w-dvw -scale-x-[1] bg-repeat opacity-20 mix-blend-overlay">
+        class="rain pix pointer-events-none fixed inset-0 z-10 m-0 h-dvh w-dvw -scale-x-[1] bg-repeat opacity-10 mix-blend-overlay">
     </figure>
 
-    <main class="flex min-h-dvh justify-center overflow-x-hidden bg-black">
-        <div class="flex w-full max-w-[628px] flex-col gap-8 px-2 pt-20 xs:px-6">
-            <section class="relative">
-                <header class="flex flex-col gap-4">
-                    <article class="flex items-start gap-4 header-container">
-                        <div class="app-icon-container flex-shrink-0">
-                            <div class="loading-skeleton -m-2 notch-icon"
-                                style="width: 130px; height: 130px; border-radius: 20px;"></div>
-                            <img alt="App icon" loading="lazy" width="130" height="130" decoding="async"
-                                class="-m-2 notch-icon appIconLarge headerIcon" src="" style="display: none;" />
+    <main class="main-container">
+        <div class="content-wrapper">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-card">
+                    <div class="app-showcase">
+                        <div class="app-icon-wrapper">
+                            <div class="loading-skeleton app-icon-placeholder">
+                                <div class="icon-shimmer"></div>
+                            </div>
+                            <img alt="App icon" loading="lazy" width="120" height="120" decoding="async"
+                                class="app-icon appIconLarge headerIcon" src="" style="display: none;" />
                         </div>
-                        <div class="w-full app-content flex-1 flex flex-col justify-start">
-                            <h1 class="text-lg font-bold text-white md:text-xl">
-                                <span class="appName headerName loading-text">Loading...</span>
-                                <code
-                                    class="inline-block rounded-[4px] bg-gray-950 bg-opacity-75 px-1 py-[2px] text-white text-xs font-bold version-info"
-                                    style="display: none;">v1.0.0</code>
-                            </h1>
-                            <p class="text-sm text-[#92919a] appDescription loading-text">
-                                Loading app information...
-                            </p>
-                            <div class="mt-2 hidden w-full gap-3 sm:flex">
-                                <a target="_blank" class="appStoreLink loading-skeleton"
-                                    class="inline-flex items-center justify-center text-sm transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-transparent rounded-xl border-[2px] h-auto px-4 hover:text-glow-gray hover:border-glow-gray w-full border-[#ced2f4] !px-4 py-2 text-center font-bold text-[#ced2f4]"
-                                    href="#" style="pointer-events: none;">
+                        <div class="app-info">
+                            <div class="app-header">
+                                <h1 class="app-title">
+                                    <span class="appName headerName loading-text">Loading...</span>
+                                    <code class="version-badge" style="display: none;">v1.0.0</code>
+                                </h1>
+                                <p class="app-description appDescription loading-text">
+                                    Loading app information...
+                                </p>
+                            </div>
+                            <div class="download-section">
+                                <a target="_blank" class="download-btn appStoreLink loading-skeleton" href="#"
+                                    style="pointer-events: none;">
                                     <img src="assets/download-appstore.svg" alt="Download on App Store"
-                                        style="height: 40px; opacity: 0.5;" />
+                                        class="download-icon" />
+                                    <span class="download-text">Download</span>
                                 </a>
                             </div>
                         </div>
-                    </article>
-
-                    <div class="mt-3">
-                        <div class="mb-4 flex w-full gap-2 sm:hidden">
-                            <a target="_blank" class="appStoreLink loading-skeleton"
-                                class="inline-flex items-center justify-center text-sm transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-transparent rounded-xl border-[2px] h-auto px-4 hover:text-glow-gray hover:border-glow-gray flex-1 border-[#ced2f4] !px-4 py-2 text-center font-bold text-[#ced2f4]"
-                                href="#" style="pointer-events: none;">
-                                <img src="assets/download-appstore.svg" alt="Download on App Store"
-                                    style="height: 30px; opacity: 0.5;" />
-                            </a>
-                        </div>
-                        <div class="flex flex-nowrap gap-2">
-                            <a target="_blank" rel="noreferrer"
-                                class="hover:border-glow hover:text-glow h-auto w-full content-center rounded-xl border-2 border-[#dbc5ac] px-4 py-2 text-center text-sm font-bold text-[#dbc5ac] xs:py-2"
-                                href="https://www.producthunt.com/">
-                                <svg class="mr-2 inline-block align-middle" xmlns="http://www.w3.org/2000/svg"
-                                    width="11" height="16" fill="none">
-                                    <path fill="#dbc5ac"
-                                        d="M6.541 5.422a.418.418 0 0 1 0-.583l1.8-1.849a.402.402 0 0 1 .286-.121.393.393 0 0 1 .284.121l1.8 1.849a.418.418 0 0 1 0 .583l-1.8 1.848a.402.402 0 0 1-.284.121.393.393 0 0 1-.285-.12l-1.8-1.85ZM5.545 4.4l-1.8-1.847a.413.413 0 0 1-.119-.292.421.421 0 0 1 .119-.293l1.8-1.847A.402.402 0 0 1 5.83 0a.393.393 0 0 1 .284.12l1.802 1.848a.413.413 0 0 1 .118.293.422.422 0 0 1-.118.292L6.114 4.4a.402.402 0 0 1-.284.12.393.393 0 0 1-.285-.12Zm0 1.46a.402.402 0 0 1 .285-.121.393.393 0 0 1 .284.121l1.802 1.847A.414.414 0 0 1 8.034 8a.422.422 0 0 1-.118.292L6.114 10.14a.402.402 0 0 1-.284.12.393.393 0 0 1-.285-.12l-1.8-1.847a.413.413 0 0 1-.119-.292.421.421 0 0 1 .119-.292l1.8-1.849ZM2.75 7.27l-1.8-1.848A.413.413 0 0 1 .83 5.13a.422.422 0 0 1 .118-.292l1.8-1.848a.402.402 0 0 1 .285-.12.393.393 0 0 1 .285.12l1.8 1.848a.42.42 0 0 1 0 .584l-1.8 1.848a.402.402 0 0 1-.285.121.393.393 0 0 1-.284-.12ZM8.91 8.73l1.8 1.848a.415.415 0 0 1 .088.45.415.415 0 0 1-.087.133l-1.8 1.848a.403.403 0 0 1-.285.121.395.395 0 0 1-.284-.12L6.54 11.16a.42.42 0 0 1 0-.583L8.343 8.73a.397.397 0 0 1 .568 0ZM6.114 11.6l1.801 1.848a.412.412 0 0 1 .119.292.422.422 0 0 1-.119.292l-1.8 1.848a.402.402 0 0 1-.285.12.393.393 0 0 1-.285-.12l-1.8-1.848a.413.413 0 0 1-.119-.292.422.422 0 0 1 .119-.292l1.8-1.848a.403.403 0 0 1 .285-.121.395.395 0 0 1 .284.121Zm-.995-1.021a.418.418 0 0 1 0 .583L3.318 13.01a.398.398 0 0 1-.57 0l-1.8-1.848a.418.418 0 0 1 0-.584l1.8-1.848a.402.402 0 0 1 .285-.12.393.393 0 0 1 .285.12l1.8 1.848Z">
-                                    </path>
-                                </svg>
-                                view on product hunt
-                            </a>
-                        </div>
                     </div>
-                </header>
-
-                <div class="mt-10 flex w-full flex-col items-center gap-4">
-                    <video width="640" autoplay muted loop playsinline
-                        class="pointer-events-none w-full rounded-[20px]">
-                        <source src="assets/notchnest-demo.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                    <p class="text-sm text-[#92919a] sm:text-base">
-                        minimum OS requirement:
-                        <code
-                            class="inline-block rounded-[4px] bg-gray-950 bg-opacity-75 px-1 py-[2px] text-sm font-bold text-[#92919a] minimumOsVersion loading-text">Loading...</code>
-                    </p>
                 </div>
 
-                <article class="mt-10 flex flex-wrap items-start justify-between gap-6 sm:flex-nowrap">
-                    <img alt="Settings on how to use the app" width="601" height="70"
-                        class="h-[300px] w-[300px] rounded-[20px] settings-image flex-shrink-0"
-                        src="assets/notchnest-settings.png" />
-                    <div class="text-xs text-[#92919a] flex-1 flex flex-col justify-start">
-                        <h3 class="text-base font-bold text-white">it's robust already in the v1.0</h3>
-                        <div class="my-2 appFullDescription loading-text">
-                            <p>Loading app description...</p>
-                        </div>
-                    </div>
-                </article>
-
-                <div class="mt-12 flex flex-col gap-2">
-                    <article class="faq-item">
-                        <div class="font-bold text-white">
-                            <h3>what about <span class="appName loading-text">the app</span>'s privacy policy?</h3>
-                        </div>
-                        <div class="text-xs text-[#92919a]">
-                            <p>sure! <a class="text-glow text-white" href="privacy-policy.html">here it is here</a></p>
-                        </div>
-                    </article>
-
-                    <article class="faq-item">
-                        <div class="font-bold text-white">
-                            <h3>what about notchless screens?</h3>
-                        </div>
-                        <div class="text-xs text-[#92919a]">
-                            <p>it turns into a nice handler with the exact same functions</p>
-                        </div>
-                    </article>
-
-                    <article class="faq-item">
-                        <div class="font-bold text-white">
-                            <h3>does it support multiple monitors?</h3>
-                        </div>
-                        <div class="text-xs text-[#92919a]">
-                            <p>yes, it does</p>
-                        </div>
-                    </article>
-
-                    <article class="faq-item">
-                        <div class="font-bold text-white">
-                            <h3>how many devices cover my license?</h3>
-                        </div>
-                        <div class="text-xs text-[#92919a]">
-                            <p>the subscription allows activation in 2 devices, the one-time payment option allows 5
-                                devices</p>
-                        </div>
-                    </article>
+                <!-- Product Hunt Badge -->
+                <div class="badge-section">
+                    <a target="_blank" rel="noreferrer" class="product-hunt-badge" href="https://www.producthunt.com/">
+                        <svg class="ph-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
+                            viewBox="0 0 11 16">
+                            <path fill="currentColor"
+                                d="M6.541 5.422a.418.418 0 0 1 0-.583l1.8-1.849a.402.402 0 0 1 .286-.121.393.393 0 0 1 .284.121l1.8 1.849a.418.418 0 0 1 0 .583l-1.8 1.848a.402.402 0 0 1-.284.121.393.393 0 0 1-.285-.12l-1.8-1.85ZM5.545 4.4l-1.8-1.847a.413.413 0 0 1-.119-.292.421.421 0 0 1 .119-.293l1.8-1.847A.402.402 0 0 1 5.83 0a.393.393 0 0 1 .284.12l1.802 1.848a.413.413 0 0 1 .118.293.422.422 0 0 1-.118.292L6.114 4.4a.402.402 0 0 1-.284.12.393.393 0 0 1-.285-.12Zm0 1.46a.402.402 0 0 1 .285-.121.393.393 0 0 1 .284.121l1.802 1.847A.414.414 0 0 1 8.034 8a.422.422 0 0 1-.118.292L6.114 10.14a.402.402 0 0 1-.284.12.393.393 0 0 1-.285-.12l-1.8-1.847a.413.413 0 0 1-.119-.292.421.421 0 0 1 .119-.292l1.8-1.849ZM2.75 7.27l-1.8-1.848A.413.413 0 0 1 .83 5.13a.422.422 0 0 1 .118-.292l1.8-1.848a.402.402 0 0 1 .285-.12.393.393 0 0 1 .285.12l1.8 1.848a.42.42 0 0 1 0 .584l-1.8 1.848a.402.402 0 0 1-.285.121.393.393 0 0 1-.284-.12ZM8.91 8.73l1.8 1.848a.415.415 0 0 1 .088.45.415.415 0 0 1-.087.133l-1.8 1.848a.403.403 0 0 1-.285.121.395.395 0 0 1-.284-.12L6.54 11.16a.42.42 0 0 1 0-.583L8.343 8.73a.397.397 0 0 1 .568 0ZM6.114 11.6l1.801 1.848a.412.412 0 0 1 .119.292.422.422 0 0 1-.119.292l-1.8 1.848a.402.402 0 0 1-.285.12.393.393 0 0 1-.285-.12l-1.8-1.848a.413.413 0 0 1-.119-.292.422.422 0 0 1 .119-.292l1.8-1.848a.403.403 0 0 1 .285-.121.395.395 0 0 1 .284.121Zm-.995-1.021a.418.418 0 0 1 0 .583L3.318 13.01a.398.398 0 0 1-.57 0l-1.8-1.848a.418.418 0 0 1 0-.584l1.8-1.848a.402.402 0 0 1 .285-.12.393.393 0 0 1 .285.12l1.8 1.848Z">
+                            </path>
+                        </svg>
+                        View on Product Hunt
+                    </a>
                 </div>
             </section>
 
-            <footer class="mb-4 flex items-center justify-center text-sm text-[#92919a]">
-                <div class="flex flex-col gap-0 text-center sm:flex-row sm:gap-2">
-                    <span>send us a letter!</span>
-                    <a href="mailto:29satnam@gmail.com">
-                        <span class="text-glow">29satnam@gmail.com</span>
+            <!-- Video Demo Section -->
+            <section class="demo-section">
+                <div class="demo-card">
+                    <video width="640" autoplay muted loop playsinline class="demo-video">
+                        <source src="assets/notchnest-demo.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="demo-info">
+                        <p class="system-requirement">
+                            Minimum OS requirement:
+                            <code class="os-badge minimumOsVersion loading-text">Loading...</code>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features-section">
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img alt="Settings on how to use the app" width="300" height="300" class="settings-image"
+                            src="assets/notchnest-settings.png" />
+                    </div>
+                    <div class="feature-content">
+                        <h2 class="feature-title">Robust from day one</h2>
+                        <div class="feature-description appFullDescription loading-text">
+                            <p>Loading app description...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-card">
+                        <h3 class="faq-question">
+                            What about <span class="appName loading-text">the app</span>'s privacy policy?
+                        </h3>
+                        <p class="faq-answer">
+                            Sure! <a class="faq-link" href="privacy-policy.html">Check it out here</a>
+                        </p>
+                    </div>
+
+                    <div class="faq-card">
+                        <h3 class="faq-question">What about notchless screens?</h3>
+                        <p class="faq-answer">
+                            It turns into a nice handler with the exact same functions
+                        </p>
+                    </div>
+
+                    <div class="faq-card">
+                        <h3 class="faq-question">Does it support multiple monitors?</h3>
+                        <p class="faq-answer">
+                            Yes, it does
+                        </p>
+                    </div>
+
+                    <div class="faq-card">
+                        <h3 class="faq-question">How many devices cover my license?</h3>
+                        <p class="faq-answer">
+                            The subscription allows activation in 2 devices, the one-time payment option allows 5
+                            devices
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <p class="footer-text">Send us a letter!</p>
+                    <a href="mailto:29satnam@gmail.com" class="footer-link">
+                        29satnam@gmail.com
                     </a>
                 </div>
             </footer>
@@ -248,7 +251,7 @@
             // Set app icon
             const $appIcon = $(".appIconLarge");
             $appIcon.attr("src", appInfo.artworkUrl512).show();
-            $(".app-icon-container .loading-skeleton").hide();
+            $(".app-icon-placeholder").hide();
 
             // Set app name
             $(".appName").html(appInfo.trackCensoredName || appInfo.trackName);
@@ -256,7 +259,7 @@
 
             // Set version info
             if (appInfo.version) {
-                $(".version-info").text("v" + appInfo.version).show();
+                $(".version-badge").text("v" + appInfo.version).show();
             }
 
             // Set description
@@ -273,7 +276,7 @@
 
             // Set App Store links
             $(".appStoreLink").attr("href", appInfo.trackViewUrl).css("pointer-events", "auto");
-            $(".appStoreLink img").css("opacity", "1");
+            $(".download-icon").css("opacity", "1");
 
             // Update meta descriptions
             $('meta[name="description"]').attr("content", shortDesc);
@@ -293,14 +296,14 @@
             $(".minimumOsVersion").html("macOS 12.0+");
 
             // Show placeholder icon
-            $(".app-icon-container .loading-skeleton").css({
+            $(".app-icon-placeholder").css({
                 'background': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
                 'display': 'flex',
                 'align-items': 'center',
                 'justify-content': 'center',
                 'color': 'white',
                 'font-weight': 'bold',
-                'font-size': '24px'
+                'font-size': '36px'
             }).text('N');
 
             console.info("Showing placeholder content");

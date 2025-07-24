@@ -12,102 +12,147 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="theme-color" content="#000000" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body class="notchnest-body">
+    <!-- Subtle background animation -->
+    <div class="background-gradient"></div>
+
     <!-- Rain animation background -->
     <figure
-        class="rain pix pointer-events-none fixed inset-0 z-50 m-0 h-dvh w-dvw -scale-x-[1] bg-repeat opacity-20 mix-blend-overlay">
+        class="rain pix pointer-events-none fixed inset-0 z-10 m-0 h-dvh w-dvw -scale-x-[1] bg-repeat opacity-10 mix-blend-overlay">
     </figure>
 
-    <main class="flex min-h-dvh justify-center overflow-x-hidden bg-black">
-        <div class="flex w-full max-w-[628px] flex-col gap-4 px-2 pt-20 xs:px-6">
-            <header>
-                <a class="inline-flex items-center justify-center text-sm font-medium transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-transparent text-[#FFDEA2] rounded-xl border-[2px] border-[#FFDEA2] h-10 px-4 py-2 hover:text-glow hover:border-glow"
-                    href="index.html">&lt;- go back</a>
-            </header>
+    <main class="main-container">
+        <div class="content-wrapper">
+            <!-- Navigation -->
+            <nav class="nav-section">
+                <a class="back-button" href="index.html">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6.5 3L2 7.5L6.5 12M2.5 7.5H14" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Back to home
+                </a>
+            </nav>
 
-            <section class="relative">
-                <header class="flex flex-col gap-4">
-                    <article class="flex items-start gap-4 header-container">
-                        <div class="app-icon-container flex-shrink-0">
-                            <div class="loading-skeleton -m-2 notch-icon"
-                                style="width: 130px; height: 130px; border-radius: 20px;"></div>
-                            <img alt="App icon" loading="lazy" width="130" height="130" decoding="async"
-                                class="-m-2 notch-icon appIconLarge headerIcon" src="" style="display: none;" />
+            <!-- Header Section -->
+            <section class="privacy-header-section">
+                <div class="privacy-hero-card">
+                    <div class="app-showcase">
+                        <div class="app-icon-wrapper">
+                            <div class="loading-skeleton app-icon-placeholder">
+                                <div class="icon-shimmer"></div>
+                            </div>
+                            <img alt="App icon" loading="lazy" width="120" height="120" decoding="async"
+                                class="app-icon appIconLarge headerIcon" src="" style="display: none;" />
                         </div>
-                        <div class="w-full app-content flex-1 flex flex-col justify-start">
-                            <h1 class="text-lg font-bold text-white md:text-xl">
-                                <span class="appName headerName loading-text">Loading...</span> Privacy Policy
-                            </h1>
-                            <p class="text-sm text-[#92919a] appDescription loading-text">
-                                Loading app information...
-                            </p>
+                        <div class="app-info">
+                            <div class="app-header">
+                                <h1 class="privacy-title">
+                                    <span class="appName headerName loading-text">Loading...</span> Privacy Policy
+                                </h1>
+                                <p class="app-description appDescription loading-text">
+                                    Loading app information...
+                                </p>
+                            </div>
                         </div>
-                    </article>
-                </header>
-
-                <div class="mt-10 flex flex-col gap-4">
-                    <article class="faq-item">
-                        <div class="font-bold text-white mb-2">
-                            <h3>Privacy Policy</h3>
-                        </div>
-                        <div class="text-sm text-[#92919a] space-y-4">
-                            <p>This privacy policy explains how we collect, use, and protect your information when you
-                                use our macOS application available on the App Store.</p>
-
-                            <h4 class="text-white font-semibold mt-4">Zero Data Collection</h4>
-                            <p>We are committed to protecting your privacy. Our app collects <strong>zero personal
-                                    data</strong>.
-                                We don't have servers, analytics, tracking, or any data collection mechanisms. The app
-                                operates
-                                entirely locally on your device.</p>
-
-                            <h4 class="text-white font-semibold mt-4">App Store Software</h4>
-                            <p>This application is distributed exclusively through the Apple App Store. By downloading
-                                and using
-                                this app, you agree to Apple's terms of service and privacy policies in addition to this
-                                policy.</p>
-
-                            <h4 class="text-white font-semibold mt-4">Local Operation</h4>
-                            <p>The app operates entirely on your device without any network connections or data
-                                transmission.
-                                All functionality is contained within the application itself, ensuring complete privacy.
-                            </p>
-
-                            <h4 class="text-white font-semibold mt-4">Refunds and Purchases</h4>
-                            <p>All purchases, subscriptions, and refund requests are handled directly by Apple through
-                                the App Store.
-                                We do not process payments or have access to your payment information. For refunds,
-                                contact Apple Support
-                                or use the "Report a Problem" feature in your App Store account.</p>
-
-                            <h4 class="text-white font-semibold mt-4">Third-Party Services</h4>
-                            <p>Our app does not integrate with any third-party analytics, advertising, tracking
-                                services, or external APIs.
-                                The only third-party involved is Apple's App Store for distribution and payment
-                                processing.</p>
-
-                            <h4 class="text-white font-semibold mt-4">Changes to This Policy</h4>
-                            <p>We may update this privacy policy from time to time. Any changes will be reflected in the
-                                app and on this page. Since we collect no data, policy changes primarily relate to
-                                clarifications
-                                rather than changes in data handling.</p>
-
-                            <h4 class="text-white font-semibold mt-4">Contact Us</h4>
-                            <p>If you have any questions about this privacy policy, please contact us at <a
-                                    href="mailto:29satnam@gmail.com" class="text-glow text-white">29satnam@gmail.com</a>
-                            </p>
-                        </div>
-                    </article>
+                    </div>
                 </div>
             </section>
 
-            <footer class="mb-4 flex items-center justify-center text-sm text-[#92919a]">
-                <div class="flex flex-col gap-0 text-center sm:flex-row sm:gap-2">
-                    <span>send us a letter!</span>
-                    <a href="mailto:29satnam@gmail.com">
-                        <span class="text-glow">29satnam@gmail.com</span>
+            <!-- Privacy Policy Content -->
+            <section class="privacy-content-section">
+                <div class="privacy-card">
+                    <div class="privacy-intro">
+                        <h2 class="privacy-section-title">Privacy Policy</h2>
+                        <p class="privacy-intro-text">
+                            This privacy policy explains how we collect, use, and protect your information when you
+                            use our macOS application available on the App Store.
+                        </p>
+                    </div>
+
+                    <div class="privacy-sections">
+                        <div class="privacy-section">
+                            <h3 class="privacy-heading">Zero Data Collection</h3>
+                            <p class="privacy-text">
+                                We are committed to protecting your privacy. Our app collects <strong>zero personal
+                                    data</strong>.
+                                We don't have servers, analytics, tracking, or any data collection mechanisms. The app
+                                operates
+                                entirely locally on your device.
+                            </p>
+                        </div>
+
+                        <div class="privacy-section">
+                            <h3 class="privacy-heading">App Store Software</h3>
+                            <p class="privacy-text">
+                                This application is distributed exclusively through the Apple App Store. By downloading
+                                and using this app, you agree to Apple's terms of service and privacy policies in
+                                addition to this
+                                policy.
+                            </p>
+                        </div>
+
+                        <div class="privacy-section">
+                            <h3 class="privacy-heading">Local Operation</h3>
+                            <p class="privacy-text">
+                                The app operates entirely on your device without any network connections or data
+                                transmission. All functionality is contained within the application itself, ensuring
+                                complete privacy.
+                            </p>
+                        </div>
+
+                        <div class="privacy-section">
+                            <h3 class="privacy-heading">Refunds and Purchases</h3>
+                            <p class="privacy-text">
+                                All purchases, subscriptions, and refund requests are handled directly by Apple through
+                                the App Store. We do not process payments or have access to your payment information.
+                                For refunds,
+                                contact Apple Support or use the "Report a Problem" feature in your App Store account.
+                            </p>
+                        </div>
+
+                        <div class="privacy-section">
+                            <h3 class="privacy-heading">Third-Party Services</h3>
+                            <p class="privacy-text">
+                                Our app does not integrate with any third-party analytics, advertising, tracking
+                                services, or external APIs. The only third-party involved is Apple's App Store for
+                                distribution and payment
+                                processing.
+                            </p>
+                        </div>
+
+                        <div class="privacy-section">
+                            <h3 class="privacy-heading">Changes to This Policy</h3>
+                            <p class="privacy-text">
+                                We may update this privacy policy from time to time. Any changes will be reflected in
+                                the
+                                app and on this page. Since we collect no data, policy changes primarily relate to
+                                clarifications rather than changes in data handling.
+                            </p>
+                        </div>
+
+                        <div class="privacy-section">
+                            <h3 class="privacy-heading">Contact Us</h3>
+                            <p class="privacy-text">
+                                If you have any questions about this privacy policy, please contact us at
+                                <a href="mailto:29satnam@gmail.com" class="privacy-link">29satnam@gmail.com</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <p class="footer-text">Send us a letter!</p>
+                    <a href="mailto:29satnam@gmail.com" class="footer-link">
+                        29satnam@gmail.com
                     </a>
                 </div>
             </footer>
@@ -127,7 +172,7 @@
         // Loading skeleton styles
         const loadingSkeletonCSS = `
             .loading-skeleton {
-                background: linear-gradient(90deg, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 75%);
+                background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
                 background-size: 200% 100%;
                 animation: loading-shimmer 2s infinite;
             }
@@ -138,7 +183,7 @@
             }
             
             .loading-text {
-                color: rgba(255, 255, 255, 0.5) !important;
+                color: rgba(255, 255, 255, 0.4) !important;
             }
         `;
 
@@ -198,7 +243,7 @@
             // Set app icon
             const $appIcon = $(".appIconLarge");
             $appIcon.attr("src", appInfo.artworkUrl512).show();
-            $(".app-icon-container .loading-skeleton").hide();
+            $(".app-icon-placeholder").hide();
 
             // Set app name
             $(".appName").html(appInfo.trackCensoredName || appInfo.trackName);
