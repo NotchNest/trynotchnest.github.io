@@ -307,12 +307,36 @@
             console.info("Showing placeholder content");
         }
 
+        // Handle anchor scrolling
+        function handleAnchorScroll() {
+            if (window.location.hash) {
+                const targetId = window.location.hash.substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    setTimeout(() => {
+                        // Check if smooth scrolling is supported
+                        if ('scrollBehavior' in document.documentElement.style) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        } else {
+                            // Fallback for older browsers
+                            const elementTop = targetElement.offsetTop - 100; // Account for any fixed headers
+                            window.scrollTo(0, elementTop);
+                        }
+                    }, 500); // Small delay to ensure content is loaded
+                }
+            }
+        }
+
         // Main initialization function
         $(function () {
             // Try to load from cache first
             const cachedData = getCachedData();
             if (cachedData) {
                 updateUI(cachedData);
+                handleAnchorScroll();
                 return;
             }
 
@@ -328,13 +352,16 @@
 
                     // Update UI
                     updateUI(appInfo);
+                    handleAnchorScroll();
                 } else {
                     console.error("No app data found");
                     showPlaceholder();
+                    handleAnchorScroll();
                 }
             }).fail(function () {
                 console.error("Failed to fetch app data from iTunes API");
                 showPlaceholder();
+                handleAnchorScroll();
             });
         });
     </script>

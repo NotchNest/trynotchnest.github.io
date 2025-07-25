@@ -425,6 +425,10 @@ video {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    scroll-margin-top: 2rem;
+    /* Ensures proper scroll positioning */
+    padding-top: 1rem;
+    /* Additional top padding for better visibility */
 }
 
 .section-title {
