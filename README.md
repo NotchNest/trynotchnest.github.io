@@ -44,10 +44,10 @@ cd trynotchnest
 In both `index.html` and `privacy-policy.html`, find and replace:
 
 ```javascript
-const APP_ID = "xxxxxxxxxx";
+const APP_ID = "6747612321";
 ```
 
-Replace `"xxxxxxxxxx"` with your actual App Store ID.
+Replace `"6747612321"` with your actual App Store ID.
 
 **How to find your App Store ID:**
 1. Go to your app's App Store page
