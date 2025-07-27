@@ -8,7 +8,7 @@ baseurl: ""
 email: "29satnam@gmail.com"
 
 # App Store Integration
-ios_app_id: "6742724228"
+ios_app_id: "xxxxxxxxxx"
 
 # Build settings
 markdown: kramdown
