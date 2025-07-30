@@ -833,6 +833,17 @@ a:focus-visible {
     font-weight: 600;
 }
 
+.privacy-list {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.privacy-list li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
 .privacy-link {
     color: #667eea;
     text-decoration: none;
