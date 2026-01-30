@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>NotchNest's Changelog</title>
+    <description>Most recent changes with links to updates.</description>
+    <language>en</language>
+    <link>https://trynotchnest.silverseahog.com</link>
+    <item>
+      <title>Version 1.1.0 - Thanks for downloading NotchNest.</title>
+      <link>https://trynotchnest.silverseahog.com</link>
+      <sparkle:version>1.1.0</sparkle:version>
+      <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString>
+      <description>&lt;![CDATA[
+    &lt;h3&gt;Thanks for downloading NotchNest.&lt;/h3&gt;
+    &lt;p&gt;Here’s what’s new in Version 1.1.0:&lt;/p&gt;
+    &lt;li&gt;New Clipboard Manager – Access your clipboard history directly from the notch, with options to highlight, search, and pin important items for quick reuse.&lt;/li&gt;
+    &lt;li&gt;Performance improvements and UI refinements for a smoother notch experience.&lt;/li&gt;
+    &lt;p&gt;Your support means a lot, and early feedback helps us improve faster.&lt;/p&gt;
+    &lt;p&gt;As always, if you run into any issues or have suggestions, feel free to reach out at 29satnam@gmail.com.&lt;/p&gt;
+]]&gt;</description>
+      <pubDate>Mon, 12 Jan 2026 21:51:31 +0000</pubDate>
+      <enclosure url="https://apps.apple.com/us/app/notchnest-power-your-notch/id6747612321?mt=12&amp;uo=4" type="application/octet-stream" length="10715049"/>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+    </item>
+  </channel>
+</rss>

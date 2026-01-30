@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>What's New - NotchNest Updates</title>
+    <meta name="description" content="Stay up to date with the latest NotchNest features and improvements." />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" sizes="16x16" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .release-notes-section {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .release-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .release-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .release-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .release-version {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .release-date {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 500;
+        }
+
+        .release-content {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .release-content ul {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .release-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .release-content strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .loading-spinner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
+        }
+
+        .spinner {
+            width: 48px;
+            height: 48px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-top-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .no-releases {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .back-link-section {
+            margin-bottom: 2rem;
+        }
+
+        .whats-new-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 768px) {
+            .release-card {
+                padding: 1.5rem;
+            }
+
+            .release-version {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="notchnest-body">
+    <!-- Subtle background animation -->
+    <div class="background-gradient"></div>
+
+    <!-- Rain animation background -->
+    <figure
+        class="rain pix pointer-events-none fixed inset-0 z-10 m-0 h-dvh w-dvw -scale-x-[1] bg-repeat opacity-10 mix-blend-overlay">
+    </figure>
+
+    <main class="main-container">
+        <div class="content-wrapper">
+            <!-- Back Link -->
+            <nav class="back-link-section">
+                <a href="index.html" class="back-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    Back to Home
+                </a>
+            </nav>
+
+            <!-- Header -->
+            <section class="hero-section">
+                <div style="text-align: center;">
+                    <h1 class="app-title">
+                        <span>What's New in NotchNest</span>
+                        <span class="whats-new-badge">Updates</span>
+                    </h1>
+                    <p class="app-description" style="margin-top: 1rem;">
+                        Stay up to date with the latest features and improvements
+                    </p>
+                </div>
+            </section>
+
+            <!-- Release Notes -->
+            <section id="release-notes" class="release-notes-section">
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <p class="footer-text">Send us a letter!</p>
+                    <a href="mailto:29satnam@gmail.com" class="footer-link">29satnam@gmail.com</a>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <!-- Release Notes Loading Script -->
+    <script>
+        const APP_ID = "6747612321";
+        const CACHE_KEY = "notchnest_releases_data";
+        const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+
+        function getCachedReleases() {
+            try {
+                const cached = localStorage.getItem(CACHE_KEY);
+                if (cached) {
+                    const data = JSON.parse(cached);
+                    const now = new Date().getTime();
+                    if (now - data.timestamp < CACHE_DURATION) {
+                        console.info("Using cached release data");
+                        return data.releases;
+                    }
+                }
+            } catch (e) {
+                console.warn("Error reading cache:", e);
+            }
+            return null;
+        }
+
+        function setCachedReleases(releases) {
+            try {
+                const cacheData = {
+                    releases: releases,
+                    timestamp: new Date().getTime()
+                };
+                localStorage.setItem(CACHE_KEY, JSON.stringify(cacheData));
+                console.info("Release data cached successfully");
+            } catch (e) {
+                console.warn("Error caching data:", e);
+            }
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
+
+        function parseReleaseNotes(notes) {
+            // Clean up the notes and format them
+            if (!notes) return '<p>No release notes available.</p>';
+
+            // Split by bullet points or lines
+            let formatted = notes
+                .replace(/•/g, '<br>•')
+                .replace(/\n/g, '<br>')
+                .trim();
+
+            // If it's very long, truncate and add structure
+            const lines = formatted.split('<br>');
+            let html = '';
+
+            for (let line of lines) {
+                line = line.trim();
+                if (line) {
+                    // Check if it's a header-like line
+                    if (line.match(/^(Version|What's New|New in|Features|Improvements|Bug Fixes)/i)) {
+                        html += `<strong>${line}</strong><br>`;
+                    } else if (line.startsWith('•') || line.startsWith('-')) {
+                        html += `<li>${line.substring(1).trim()}</li>`;
+                    } else {
+                        html += `<p>${line}</p>`;
+                    }
+                }
+            }
+
+            // Wrap list items if any
+            if (html.includes('<li>')) {
+                html = html.replace(/(<li>.*<\/li>)/g, '<ul>$1</ul>');
+            }
+
+            return html || '<p>No release notes available.</p>';
+        }
+
+        function displayReleases(appInfo) {
+            const $container = $('#release-notes');
+            $container.empty();
+
+            if (!appInfo || !appInfo.releaseNotes) {
+                $container.html(`
+                    <div class="no-releases">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">No Release Notes Available</h3>
+                        <p>Check back soon for updates!</p>
+                    </div>
+                `);
+                return;
+            }
+
+            // Create a release card for the current version
+            const releaseCard = `
+                <div class="release-card">
+                    <div class="release-header">
+                        <div>
+                            <h2 class="release-version">Version ${appInfo.version || 'Latest'}</h2>
+                            <p class="release-date">${formatDate(appInfo.currentVersionReleaseDate || appInfo.releaseDate)}</p>
+                        </div>
+                    </div>
+                    <div class="release-content">
+                        ${parseReleaseNotes(appInfo.releaseNotes)}
+                    </div>
+                </div>
+            `;
+
+            $container.append(releaseCard);
+
+            console.info("Release notes displayed successfully");
+        }
+
+        function showError() {
+            $('#release-notes').html(`
+                <div class="no-releases">
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">Unable to Load Release Notes</h3>
+                    <p>Please try again later or visit the <a href="https://apps.apple.com/us/app/notchnest-power-your-notch/id6747612321" class="faq-link" target="_blank">App Store page</a> for updates.</p>
+                </div>
+            `);
+        }
+
+        // Main initialization
+        $(function () {
+            // Try to load from cache first
+            const cachedData = getCachedReleases();
+            if (cachedData) {
+                displayReleases(cachedData);
+                return;
+            }
+
+            // Fetch from API
+            const apiURL = "https://itunes.apple.com/lookup?id=" + APP_ID + "&callback=?";
+
+            $.getJSON(apiURL, function (json) {
+                if (json.results && json.results.length) {
+                    const appInfo = json.results[0];
+                    setCachedReleases(appInfo);
+                    displayReleases(appInfo);
+                } else {
+                    console.error("No app data found");
+                    showError();
+                }
+            }).fail(function () {
+                console.error("Failed to fetch app data from iTunes API");
+                showError();
+            });
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

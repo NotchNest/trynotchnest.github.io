@@ -6,11 +6,14 @@ A beautiful, modern, and responsive landing page template for macOS applications
 
 - **Modern Design**: Clean, minimal aesthetic with glassmorphism effects and dark purplish theme
 - **App Store Integration**: Automatically fetches app data (name, icon, description, version) from iTunes API
+- **Sparkle Update System**: Auto-generated appcast.xml for macOS app updates with Sparkle framework
+- **What's New Page**: Beautiful release notes page that syncs with App Store
 - **Responsive Layout**: Perfect on all devices - desktop, tablet, and mobile
 - **Dynamic Content**: Real-time loading with skeleton animations
 - **Privacy Policy Page**: Dedicated privacy policy page with consistent design
 - **Performance Optimized**: Fast loading with caching and optimized assets
 - **GitHub Pages Ready**: Zero-configuration deployment to GitHub Pages
+- **Automated Updates**: GitHub Actions automatically updates appcast every 6 hours
 
 ## 🚀 Live Demo
 
@@ -20,11 +23,13 @@ Visit the live demo: [https://29satnam.github.io/trynotchnest](https://29satnam.
 
 The website features:
 - Hero section with app icon, name, and description
-- Download buttons (App Store + Product Hunt)
+- Download buttons (App Store, Product Hunt, What's New)
+- What's New page with auto-updating release notes
 - Video demo section
 - Feature highlights with static content
 - FAQ section
 - Privacy policy page
+- Sparkle appcast.xml for app update notifications
 
 ## 🛠 Setup Instructions
 
@@ -249,7 +254,7 @@ If you need help setting up the website:
 
 ## 🎯 Quick Start Checklist
 
-- [ ] Replace App Store ID with your app's ID
+- [ ] Replace App Store ID with your app's ID (in `index.html`, `whats-new.html`, and `scripts/generate_appcast.py`)
 - [ ] Update contact email addresses
 - [ ] Update Product Hunt link (or remove)
 - [ ] Update repository URL in meta tags
@@ -258,6 +263,30 @@ If you need help setting up the website:
 - [ ] Update privacy policy content
 - [ ] Test locally before deploying
 - [ ] Enable GitHub Pages in repository settings
+- [ ] Set up Sparkle in your macOS app (see `SPARKLE_SETUP.md`)
+- [ ] Trigger the GitHub Action to generate initial appcast
+
+## 🔄 Sparkle Integration
+
+This project includes a complete Sparkle update system:
+
+- **`appcast.xml`**: Auto-generated Sparkle feed
+- **`whats-new.html`**: User-facing release notes page
+- **`scripts/generate_appcast.py`**: Python script to generate appcast from App Store data
+- **`.github/workflows/generate-appcast.yml`**: GitHub Action for automatic updates
+
+For detailed Sparkle setup instructions, see **[SPARKLE_SETUP.md](SPARKLE_SETUP.md)**
+
+### Quick Sparkle Setup
+
+1. Add Sparkle framework to your Xcode project
+2. Add `SUFeedURL` to your `Info.plist`:
+   ```xml
+   <key>SUFeedURL</key>
+   <string>https://trynotchnest.silverseahog.com/appcast.xml</string>
+   ```
+3. Initialize Sparkle in your app code
+4. Deploy your website and the appcast will auto-update
 
 ---
 
