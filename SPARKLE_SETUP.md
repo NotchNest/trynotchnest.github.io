@@ -152,6 +152,16 @@ If you want to distribute directly outside the App Store:
    - EdDSA signature
    - Proper file size
 
+### Version History
+
+The appcast generator automatically maintains a complete version history:
+- **All versions are preserved** - New versions are added to the top
+- **Existing versions are kept** - Script loads and merges history
+- **Sparkle compatible** - Format matches Sparkle's sample appcast
+- **Automatic updates** - GitHub Action preserves history on every run
+
+Just like Sparkle's official sample, users can see all available versions when checking for updates.
+
 ### Current Setup (App Store)
 
 The current `appcast.xml` points to the App Store link. This means:

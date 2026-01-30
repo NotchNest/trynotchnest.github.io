@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+<rss xmlns:ns0="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
   <channel>
     <title>NotchNest's Changelog</title>
     <description>Most recent changes with links to updates.</description>
@@ -21,6 +21,59 @@
       <pubDate>Mon, 12 Jan 2026 21:51:31 +0000</pubDate>
       <enclosure url="https://apps.apple.com/us/app/notchnest-power-your-notch/id6747612321?mt=12&amp;uo=4" type="application/octet-stream" length="10715049"/>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+    </item>
+    <item>
+      <title>Version 1.0.11</title>
+      <link>https://trynotchnest.silverseahog.com</link>
+      <ns0:version>1.0.11</ns0:version>
+      <ns0:shortVersionString>1.0.11</ns0:shortVersionString>
+      <description>
+    &lt;h3&gt;Thanks for downloading NotchNest.&lt;/h3&gt;
+    &lt;p&gt;Here's what's new in Version 1.0.11:&lt;/p&gt;
+    &lt;li&gt;Fixed an issue where the previous update was accidentally released with placeholder album art.&lt;/li&gt;
+    &lt;p&gt;Your support means a lot, and early feedback helps us improve faster.&lt;/p&gt;
+    &lt;p&gt;As always, if you run into any issues or have suggestions, feel free to reach out at 29satnam@gmail.com.&lt;/p&gt;
+</description>
+      <pubDate>Sun, 10 Nov 2025 00:00:00 +0000</pubDate>
+      <enclosure url="https://apps.apple.com/us/app/notchnest-power-your-notch/id6747612321?mt=12&amp;uo=4" type="application/octet-stream" length="10700000"/>
+      <ns0:minimumSystemVersion>14.0</ns0:minimumSystemVersion>
+    </item>
+    <item>
+      <title>Version 1.0.10</title>
+      <link>https://trynotchnest.silverseahog.com</link>
+      <ns0:version>1.0.10</ns0:version>
+      <ns0:shortVersionString>1.0.10</ns0:shortVersionString>
+      <description>
+    &lt;h3&gt;Thanks for downloading NotchNest.&lt;/h3&gt;
+    &lt;p&gt;Here's what's new in Version 1.0.10:&lt;/p&gt;
+    &lt;li&gt;Improved screen detection for greater accuracy.&lt;/li&gt;
+    &lt;li&gt;Added support for Liquid Glass user interface.&lt;/li&gt;
+    &lt;li&gt;Fixed an issue where the 'Settings' button was unresponsive.&lt;/li&gt;
+    &lt;p&gt;Your support means a lot, and early feedback helps us improve faster.&lt;/p&gt;
+</description>
+      <pubDate>Fri, 08 Nov 2025 00:00:00 +0000</pubDate>
+      <enclosure url="https://apps.apple.com/us/app/notchnest-power-your-notch/id6747612321?mt=12&amp;uo=4" type="application/octet-stream" length="10650000"/>
+      <ns0:minimumSystemVersion>14.0</ns0:minimumSystemVersion>
+    </item>
+    <item>
+      <title>Version 1.0.0</title>
+      <link>https://trynotchnest.silverseahog.com</link>
+      <ns0:version>1.0.0</ns0:version>
+      <ns0:shortVersionString>1.0.0</ns0:shortVersionString>
+      <description>
+    &lt;h3&gt;Welcome to NotchNest!&lt;/h3&gt;
+    &lt;p&gt;Initial release of NotchNest with the following features:&lt;/p&gt;
+    &lt;li&gt;Calendar Integration&lt;/li&gt;
+    &lt;li&gt;Quick Notes &amp; Capture&lt;/li&gt;
+    &lt;li&gt;Built-in Pomodoro Timer&lt;/li&gt;
+    &lt;li&gt;Instant Bookmarks Access&lt;/li&gt;
+    &lt;li&gt;Spotify &amp; Music App Control&lt;/li&gt;
+    &lt;li&gt;Instant Camera Mirror&lt;/li&gt;
+    &lt;p&gt;Thank you for downloading NotchNest!&lt;/p&gt;
+</description>
+      <pubDate>Tue, 30 Jul 2025 00:00:00 +0000</pubDate>
+      <enclosure url="https://apps.apple.com/us/app/notchnest-power-your-notch/id6747612321?mt=12&amp;uo=4" type="application/octet-stream" length="10000000"/>
+      <ns0:minimumSystemVersion>14.0</ns0:minimumSystemVersion>
     </item>
   </channel>
 </rss>
