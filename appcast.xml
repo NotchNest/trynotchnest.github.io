@@ -6,27 +6,10 @@
     <language>en</language>
     <link>https://trynotchnest.silverseahog.com</link>
     <item>
-      <title>Version 1.1.2 - Thanks for downloading NotchNest.</title>
-      <link>https://trynotchnest.silverseahog.com</link>
-      <sparkle:version>1.1.2</sparkle:version>
-      <sparkle:shortVersionString>1.1.2</sparkle:shortVersionString>
-      <description>&lt;![CDATA[
-    &lt;h3&gt;Thanks for downloading NotchNest.&lt;/h3&gt;
-    &lt;p&gt;Here’s what’s new in Version 1.1.2:&lt;/p&gt;
-    &lt;li&gt;Big performance boost! The app is now lighter, faster, and far more efficient with memory and CPU.&lt;/li&gt;
-    &lt;li&gt;Resolved a Calendar-related app crash introduced in the previous update.&lt;/li&gt;
-    &lt;p&gt;Your support means a lot, and early feedback helps us improve faster.&lt;/p&gt;
-    &lt;p&gt;As always, if you run into any issues or have suggestions, feel free to reach out at 29satnam@gmail.com.&lt;/p&gt;
-]]&gt;</description>
-      <pubDate>Wed, 11 Feb 2026 04:56:48 +0000</pubDate>
-      <enclosure url="https://apps.apple.com/us/app/notchnest-power-your-notch/id6747612321?mt=12&amp;uo=4" type="application/octet-stream" length="10951437"/>
-      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-    </item>
-    <item>
       <title>Version 1.1.1 - Thanks for downloading NotchNest.</title>
       <link>https://trynotchnest.silverseahog.com</link>
-      <ns0:version>1.1.1</ns0:version>
-      <ns0:shortVersionString>1.1.1</ns0:shortVersionString>
+      <sparkle:version>1.1.1</sparkle:version>
+      <sparkle:shortVersionString>1.1.1</sparkle:shortVersionString>
       <description>&lt;![CDATA[
     &lt;h3&gt;Thanks for downloading NotchNest.&lt;/h3&gt;
     &lt;p&gt;Here’s what’s new in Version 1.1.1:&lt;/p&gt;
@@ -40,6 +23,23 @@
 ]]&gt;</description>
       <pubDate>Wed, 04 Feb 2026 04:46:56 +0000</pubDate>
       <enclosure url="https://apps.apple.com/us/app/notchnest-power-your-notch/id6747612321?mt=12&amp;uo=4" type="application/octet-stream" length="10940949"/>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+    </item>
+    <item>
+      <title>Version 1.1.2 - Thanks for downloading NotchNest.</title>
+      <link>https://trynotchnest.silverseahog.com</link>
+      <ns0:version>1.1.2</ns0:version>
+      <ns0:shortVersionString>1.1.2</ns0:shortVersionString>
+      <description>&lt;![CDATA[
+    &lt;h3&gt;Thanks for downloading NotchNest.&lt;/h3&gt;
+    &lt;p&gt;Here’s what’s new in Version 1.1.2:&lt;/p&gt;
+    &lt;li&gt;Big performance boost! The app is now lighter, faster, and far more efficient with memory and CPU.&lt;/li&gt;
+    &lt;li&gt;Resolved a Calendar-related app crash introduced in the previous update.&lt;/li&gt;
+    &lt;p&gt;Your support means a lot, and early feedback helps us improve faster.&lt;/p&gt;
+    &lt;p&gt;As always, if you run into any issues or have suggestions, feel free to reach out at 29satnam@gmail.com.&lt;/p&gt;
+]]&gt;</description>
+      <pubDate>Wed, 11 Feb 2026 04:56:48 +0000</pubDate>
+      <enclosure url="https://apps.apple.com/us/app/notchnest-power-your-notch/id6747612321?mt=12&amp;uo=4" type="application/octet-stream" length="10951437"/>
       <ns0:minimumSystemVersion>14.0</ns0:minimumSystemVersion>
     </item>
     <item>
