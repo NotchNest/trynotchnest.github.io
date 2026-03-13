@@ -6,10 +6,28 @@
     <language>en</language>
     <link>https://trynotchnest.silverseahog.com</link>
     <item>
+      <title>Version 1.1.4 - Thanks for downloading NotchNest.</title>
+      <link>https://trynotchnest.silverseahog.com</link>
+      <sparkle:version>1.1.4</sparkle:version>
+      <sparkle:shortVersionString>1.1.4</sparkle:shortVersionString>
+      <description>&lt;![CDATA[
+    &lt;h3&gt;Thanks for downloading NotchNest.&lt;/h3&gt;
+    &lt;p&gt;Here’s what’s new in Version 1.1.4:&lt;/p&gt;
+    &lt;li&gt;NotchNest Live Activity now includes action buttons.&lt;/li&gt;
+    &lt;li&gt;NotchNest now supports Apple Music on macOS 26.3, and we’ve updated the app to enable this integration.&lt;/li&gt;
+    &lt;li&gt;Fixed an issue where calendar events were not syncing with NotchNest.&lt;/li&gt;
+    &lt;p&gt;Your support means a lot, and early feedback helps us improve faster.&lt;/p&gt;
+    &lt;p&gt;As always, if you run into any issues or have suggestions, feel free to reach out at 29satnam@gmail.com.&lt;/p&gt;
+]]&gt;</description>
+      <pubDate>Thu, 12 Mar 2026 18:16:06 +0000</pubDate>
+      <enclosure url="https://apps.apple.com/us/app/notchnest-power-your-notch/id6747612321?mt=12&amp;uo=4" type="application/octet-stream" length="11003936"/>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+    </item>
+    <item>
       <title>Version 1.1.3 - Thanks for downloading NotchNest.</title>
       <link>https://trynotchnest.silverseahog.com</link>
-      <sparkle:version>1.1.3</sparkle:version>
-      <sparkle:shortVersionString>1.1.3</sparkle:shortVersionString>
+      <ns0:version>1.1.3</ns0:version>
+      <ns0:shortVersionString>1.1.3</ns0:shortVersionString>
       <description>&lt;![CDATA[
     &lt;h3&gt;Thanks for downloading NotchNest.&lt;/h3&gt;
     &lt;p&gt;Here’s what’s new in Version 1.1.3:&lt;/p&gt;
@@ -22,7 +40,7 @@
 ]]&gt;</description>
       <pubDate>Fri, 27 Feb 2026 18:34:49 +0000</pubDate>
       <enclosure url="https://apps.apple.com/us/app/notchnest-power-your-notch/id6747612321?mt=12&amp;uo=4" type="application/octet-stream" length="10978021"/>
-      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <ns0:minimumSystemVersion>14.0</ns0:minimumSystemVersion>
     </item>
     <item>
       <title>Version 1.1.2 - Thanks for downloading NotchNest.</title>
