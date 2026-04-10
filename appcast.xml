@@ -6,26 +6,10 @@
     <language>en</language>
     <link>https://trynotchnest.silverseahog.com</link>
     <item>
-      <title>Version 1.1.7 - Thanks for downloading NotchNest.</title>
-      <link>https://trynotchnest.silverseahog.com</link>
-      <sparkle:version>1.1.7</sparkle:version>
-      <sparkle:shortVersionString>1.1.7</sparkle:shortVersionString>
-      <description>&lt;![CDATA[
-    &lt;h3&gt;Thanks for downloading NotchNest.&lt;/h3&gt;
-    &lt;p&gt;Here’s what’s new in Version 1.1.7:&lt;/p&gt;
-    &lt;li&gt;Resolved a critical exception that was causing the app to crash and terminate.&lt;/li&gt;
-    &lt;p&gt;Your support means a lot, and early feedback helps us improve faster.&lt;/p&gt;
-    &lt;p&gt;As always, if you run into any issues or have suggestions, feel free to reach out at 29satnam@gmail.com.&lt;/p&gt;
-]]&gt;</description>
-      <pubDate>Thu, 09 Apr 2026 18:56:32 +0000</pubDate>
-      <enclosure url="https://apps.apple.com/us/app/notchnest-power-your-notch/id6747612321?mt=12&amp;uo=4" type="application/octet-stream" length="10955254"/>
-      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-    </item>
-    <item>
       <title>Version 1.1.6 - Thanks for downloading NotchNest.</title>
       <link>https://trynotchnest.silverseahog.com</link>
-      <ns0:version>1.1.6</ns0:version>
-      <ns0:shortVersionString>1.1.6</ns0:shortVersionString>
+      <sparkle:version>1.1.6</sparkle:version>
+      <sparkle:shortVersionString>1.1.6</sparkle:shortVersionString>
       <description>&lt;![CDATA[
     &lt;h3&gt;Thanks for downloading NotchNest.&lt;/h3&gt;
     &lt;p&gt;Here’s what’s new in Version 1.1.6:&lt;/p&gt;
@@ -35,6 +19,22 @@
 ]]&gt;</description>
       <pubDate>Wed, 08 Apr 2026 21:08:10 +0000</pubDate>
       <enclosure url="https://apps.apple.com/us/app/notchnest-power-your-notch/id6747612321?mt=12&amp;uo=4" type="application/octet-stream" length="10971891"/>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+    </item>
+    <item>
+      <title>Version 1.1.7 - Thanks for downloading NotchNest.</title>
+      <link>https://trynotchnest.silverseahog.com</link>
+      <ns0:version>1.1.7</ns0:version>
+      <ns0:shortVersionString>1.1.7</ns0:shortVersionString>
+      <description>&lt;![CDATA[
+    &lt;h3&gt;Thanks for downloading NotchNest.&lt;/h3&gt;
+    &lt;p&gt;Here’s what’s new in Version 1.1.7:&lt;/p&gt;
+    &lt;li&gt;Resolved a critical exception that was causing the app to crash and terminate.&lt;/li&gt;
+    &lt;p&gt;Your support means a lot, and early feedback helps us improve faster.&lt;/p&gt;
+    &lt;p&gt;As always, if you run into any issues or have suggestions, feel free to reach out at 29satnam@gmail.com.&lt;/p&gt;
+]]&gt;</description>
+      <pubDate>Thu, 09 Apr 2026 18:56:32 +0000</pubDate>
+      <enclosure url="https://apps.apple.com/us/app/notchnest-power-your-notch/id6747612321?mt=12&amp;uo=4" type="application/octet-stream" length="10955254"/>
       <ns0:minimumSystemVersion>14.0</ns0:minimumSystemVersion>
     </item>
     <item>
