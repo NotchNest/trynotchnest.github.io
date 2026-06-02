@@ -1,20 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://trynotchnest.silverseahog.com/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://trynotchnest.silverseahog.com/1200x630-banner.jpg</image:loc>
+      <image:title>NotchNest – Mac Notch App banner</image:title>
+      <image:caption>NotchNest turns your MacBook notch into a productivity hub.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://trynotchnest.silverseahog.com/assets/notchnest-icon.png</image:loc>
+      <image:title>NotchNest app icon</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://trynotchnest.silverseahog.com/assets/notchnest-settings.png</image:loc>
+      <image:title>NotchNest settings panel</image:title>
+      <image:caption>Settings panel showing NotchNest widget toggles.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://trynotchnest.silverseahog.com/assets/notchnest-poster.webp</image:loc>
+      <image:title>NotchNest demo video poster</image:title>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://trynotchnest.silverseahog.com/assets/notchnest-poster.webp</video:thumbnail_loc>
+      <video:title>NotchNest Mac Notch App Demo</video:title>
+      <video:description>Demo of NotchNest turning the MacBook notch into a productivity hub with calendar, Pomodoro timer, notes, bookmarks and music controls.</video:description>
+      <video:content_loc>https://trynotchnest.silverseahog.com/assets/notchnest-demo.mp4</video:content_loc>
+      <video:duration>102</video:duration>
+      <video:publication_date>2026-06-02</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
   </url>
   <url>
     <loc>https://trynotchnest.silverseahog.com/whats-new.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://trynotchnest.silverseahog.com/privacy-policy.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
