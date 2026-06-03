@@ -6,10 +6,28 @@
     <language>en</language>
     <link>https://trynotchnest.silverseahog.com</link>
     <item>
+      <title>Version 1.2.3 - Thanks for downloading NotchNest.</title>
+      <link>https://trynotchnest.silverseahog.com</link>
+      <sparkle:version>1.2.3</sparkle:version>
+      <sparkle:shortVersionString>1.2.3</sparkle:shortVersionString>
+      <description>&lt;![CDATA[
+    &lt;h3&gt;Thanks for downloading NotchNest.&lt;/h3&gt;
+    &lt;p&gt;Here’s what’s new in Version 1.2.3:&lt;/p&gt;
+    &lt;li&gt;Clipboard search field is now searchable on first click&lt;/li&gt;
+    &lt;li&gt;Added camera source selection for Mirror&lt;/li&gt;
+    &lt;li&gt;Default quote in Notes no longer reappears after deletion&lt;/li&gt;
+    &lt;li&gt;Calendar toggle selections now persist after app restarts&lt;/li&gt;
+    &lt;p&gt;As always, if you run into any issues or have suggestions, feel free to reach out at 29satnam@gmail.com.&lt;/p&gt;
+]]&gt;</description>
+      <pubDate>Wed, 03 Jun 2026 04:17:15 +0000</pubDate>
+      <enclosure url="https://apps.apple.com/us/app/notchnest-power-your-notch/id6747612321?mt=12&amp;uo=4" type="application/octet-stream" length="10857911"/>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+    </item>
+    <item>
       <title>Version 1.2.2 - Thanks for downloading NotchNest.</title>
       <link>https://trynotchnest.silverseahog.com</link>
-      <sparkle:version>1.2.2</sparkle:version>
-      <sparkle:shortVersionString>1.2.2</sparkle:shortVersionString>
+      <ns0:version>1.2.2</ns0:version>
+      <ns0:shortVersionString>1.2.2</ns0:shortVersionString>
       <description>&lt;![CDATA[
     &lt;h3&gt;Thanks for downloading NotchNest.&lt;/h3&gt;
     &lt;p&gt;Here’s what’s new in Version 1.2.2:&lt;/p&gt;
@@ -19,7 +37,7 @@
 ]]&gt;</description>
       <pubDate>Thu, 30 Apr 2026 00:57:19 +0000</pubDate>
       <enclosure url="https://apps.apple.com/us/app/notchnest-power-your-notch/id6747612321?mt=12&amp;uo=4" type="application/octet-stream" length="10950579"/>
-      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <ns0:minimumSystemVersion>14.0</ns0:minimumSystemVersion>
     </item>
     <item>
       <title>Version 1.2.1 - Thanks for downloading NotchNest AI.</title>
