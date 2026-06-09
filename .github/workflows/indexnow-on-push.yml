@@ -1,0 +1,48 @@
+name: IndexNow ping on push
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "learn/**"
+      - "de/**"
+      - "zh/**"
+      - "whats-new.html"
+      - "privacy-policy.html"
+      - "sitemap.xml"
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Wait for Pages deploy
+        run: sleep 90
+      - name: Ping IndexNow
+        run: |
+          python3 - <<'PY'
+          import json, urllib.request, urllib.error, xml.etree.ElementTree as ET
+          tree = ET.parse("sitemap.xml")
+          ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+          urls = [l.text for l in tree.getroot().iter(f"{{{ns['s']}}}loc")]
+          payload = json.dumps({
+            "host": "trynotchnest.silverseahog.com",
+            "key": "e348658e6461a8012892dff0e066abe8",
+            "keyLocation": "https://trynotchnest.silverseahog.com/e348658e6461a8012892dff0e066abe8.txt",
+            "urlList": urls
+          }).encode()
+          for ep in ("https://api.indexnow.org/indexnow", "https://www.bing.com/indexnow", "https://yandex.com/indexnow"):
+            try:
+              req = urllib.request.Request(ep, data=payload, headers={"Content-Type": "application/json"}, method="POST")
+              with urllib.request.urlopen(req, timeout=10) as r:
+                print(f"{ep}: HTTP {r.status}")
+            except urllib.error.HTTPError as e:
+              print(f"{ep}: HTTP {e.code}")
+            except Exception as e:
+              print(f"{ep}: {e}")
+          PY

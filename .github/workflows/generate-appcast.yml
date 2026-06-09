@@ -1,0 +1,52 @@
+name: Generate Appcast
+
+on:
+  schedule:
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # Allow manual trigger
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/generate-appcast.yml'
+      - 'scripts/generate_appcast.py'
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+          
+      - name: Generate appcast.xml
+        run: |
+          python scripts/generate_appcast.py
+          
+      - name: Check for changes
+        id: verify_diff
+        run: |
+          git diff --quiet appcast.xml || echo "changed=true" >> $GITHUB_OUTPUT
+          
+      - name: Commit and push if changed
+        if: steps.verify_diff.outputs.changed == 'true'
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'actions@github.com'
+          git add appcast.xml
+          git commit -m "Auto-update appcast.xml from App Store data"
+          git push

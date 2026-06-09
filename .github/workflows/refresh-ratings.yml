@@ -1,0 +1,36 @@
+name: Refresh ratings + ping IndexNow
+
+on:
+  schedule:
+    # Daily at 04:00 UTC
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Refresh ratings + ping IndexNow
+        run: python3 scripts/update_ratings.py --ping
+
+      - name: Commit if rating changed
+        run: |
+          if [[ -n $(git status --porcelain) ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add index.html
+            git commit -m "chore: refresh AggregateRating + IndexNow ping"
+            git push
+          else
+            echo "No rating change."
+          fi
