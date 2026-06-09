@@ -100,6 +100,10 @@
     <lastmod>2026-06-09T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://trynotchnest.silverseahog.com/learn/best-macos-notch-apps/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://trynotchnest.silverseahog.com/de/learn/best-macos-notch-apps/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://trynotchnest.silverseahog.com/zh/learn/best-macos-notch-apps/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://trynotchnest.silverseahog.com/learn/best-macos-notch-apps/"/>
   </url>
   <url>
     <loc>https://trynotchnest.silverseahog.com/learn/does-the-mac-notch-actually-do-anything/</loc>
@@ -110,6 +114,46 @@
   <url>
     <loc>https://trynotchnest.silverseahog.com/learn/how-to-use-the-macbook-notch/</loc>
     <lastmod>2026-06-09T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://trynotchnest.silverseahog.com/learn/how-to-use-the-macbook-notch/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://trynotchnest.silverseahog.com/de/learn/how-to-use-the-macbook-notch/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://trynotchnest.silverseahog.com/zh/learn/how-to-use-the-macbook-notch/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://trynotchnest.silverseahog.com/learn/how-to-use-the-macbook-notch/"/>
+  </url>
+  <url>
+    <loc>https://trynotchnest.silverseahog.com/de/learn/</loc>
+    <lastmod>2026-06-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trynotchnest.silverseahog.com/de/learn/how-to-use-the-macbook-notch/</loc>
+    <lastmod>2026-06-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://trynotchnest.silverseahog.com/de/learn/best-macos-notch-apps/</loc>
+    <lastmod>2026-06-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://trynotchnest.silverseahog.com/zh/learn/</loc>
+    <lastmod>2026-06-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trynotchnest.silverseahog.com/zh/learn/how-to-use-the-macbook-notch/</loc>
+    <lastmod>2026-06-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://trynotchnest.silverseahog.com/zh/learn/best-macos-notch-apps/</loc>
+    <lastmod>2026-06-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
