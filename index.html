@@ -971,6 +971,34 @@ img,video,svg{display:block;max-width:100%;height:auto}
       })();
       var yr = document.getElementById('yr'); if (yr) yr.textContent = new Date().getFullYear();
     </script>
+
+    <!-- Locale suggestion banner (no auto-redirect; SEO-safe) -->
+    <script>
+    (function(){
+      // Skip for bots
+      if (/bot|crawl|spider|slurp|preview|index/i.test(navigator.userAgent)) return;
+      // Skip if user dismissed
+      try { if (localStorage.getItem('nn_locale_dismissed') === '1') return; } catch(e){}
+      var langs = (navigator.languages || [navigator.language || '']).map(function(l){ return (l||'').toLowerCase(); });
+      var path = window.location.pathname;
+      if (path.indexOf('/de') === 0 || path.indexOf('/zh') === 0) return;
+      var match = null;
+      for (var i = 0; i < langs.length; i++) {
+        if (langs[i].indexOf('de') === 0) { match = { href: '/de/', label: 'Auf Deutsch lesen', close: 'Schließen' }; break; }
+        if (langs[i].indexOf('zh') === 0) { match = { href: '/zh/', label: '阅读中文版', close: '关闭' }; break; }
+      }
+      if (!match) return;
+      var b = document.createElement('div');
+      b.className = 'nn-locale-banner';
+      b.innerHTML = '<a href="' + match.href + '">' + match.label + ' →</a>' +
+                    '<button type="button" aria-label="' + match.close + '">×</button>';
+      document.body.appendChild(b);
+      b.querySelector('button').addEventListener('click', function(){
+        b.remove();
+        try { localStorage.setItem('nn_locale_dismissed', '1'); } catch(e){}
+      });
+    })();
+    </script>
 </body>
 
 </html>
