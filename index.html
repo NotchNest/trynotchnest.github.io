@@ -234,10 +234,30 @@
       },
       {
         "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "NotchNest",
+        "url": "https://trynotchnest.silverseahog.com/",
+        "logo": "https://trynotchnest.silverseahog.com/assets/notchnest-icon.png",
+        "image": "https://trynotchnest.silverseahog.com/1200x630-banner.jpg",
+        "founder": { "@type": "Person", "name": "Satnam Singh" },
+        "email": "29satnam@gmail.com",
+        "sameAs": [
+          "https://apps.apple.com/us/app/notchnest-power-your-notch/id6747612321",
+          "https://www.producthunt.com/products/notchnest-quick-access-hub"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "NotchNest",
         "url": "https://trynotchnest.silverseahog.com/",
-        "description": "Official site of NotchNest — the productivity hub for your MacBook's notch."
+        "description": "Official site of NotchNest — the productivity hub for your MacBook's notch.",
+        "publisher": { "@id": "https://trynotchnest.silverseahog.com/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://trynotchnest.silverseahog.com/learn/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
       },
       {
         "@context": "https://schema.org",
@@ -354,9 +374,8 @@
     <link rel="preconnect" href="https://is1-ssl.mzstatic.com">
     <link rel="dns-prefetch" href="https://itunes.apple.com">
     <link rel="alternate" hreflang="en" href="https://trynotchnest.silverseahog.com/" />
-    <link rel="alternate" hreflang="de" href="https://trynotchnest.silverseahog.com/" />
-    <link rel="alternate" hreflang="zh" href="https://trynotchnest.silverseahog.com/" />
     <link rel="alternate" hreflang="x-default" href="https://trynotchnest.silverseahog.com/" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
 </head>

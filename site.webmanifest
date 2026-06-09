@@ -1,0 +1,20 @@
+{
+  "name": "NotchNest — Power Your Notch",
+  "short_name": "NotchNest",
+  "description": "Turn your MacBook's notch into a productivity hub. AI clipboard, calendar, notes, Pomodoro, music, AirDrop.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "lang": "en",
+  "categories": ["productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/assets/notchnest-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
