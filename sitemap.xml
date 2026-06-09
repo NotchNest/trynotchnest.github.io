@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://trynotchnest.silverseahog.com/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://trynotchnest.silverseahog.com/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://trynotchnest.silverseahog.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://trynotchnest.silverseahog.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://trynotchnest.silverseahog.com/"/>
     <image:image>
       <image:loc>https://trynotchnest.silverseahog.com/1200x630-banner.jpg</image:loc>
       <image:title>NotchNest – Mac Notch App banner</image:title>
@@ -28,10 +33,10 @@
     <video:video>
       <video:thumbnail_loc>https://trynotchnest.silverseahog.com/assets/notchnest-poster.webp</video:thumbnail_loc>
       <video:title>NotchNest Mac Notch App Demo</video:title>
-      <video:description>Demo of NotchNest turning the MacBook notch into a productivity hub with calendar, Pomodoro timer, notes, bookmarks and music controls.</video:description>
+      <video:description>NotchNest turning the MacBook notch into a productivity hub with calendar, Pomodoro timer, AI clipboard, notes, bookmarks, music controls and AirDrop.</video:description>
       <video:content_loc>https://trynotchnest.silverseahog.com/assets/notchnest-demo.mp4</video:content_loc>
       <video:duration>102</video:duration>
-      <video:publication_date>2026-06-02</video:publication_date>
+      <video:publication_date>2026-06-02T00:00:00+00:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
       <video:live>no</video:live>
       <video:requires_subscription>no</video:requires_subscription>
@@ -39,14 +44,56 @@
   </url>
   <url>
     <loc>https://trynotchnest.silverseahog.com/whats-new.html</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://trynotchnest.silverseahog.com/privacy-policy.html</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://trynotchnest.silverseahog.com/learn/</loc>
+    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trynotchnest.silverseahog.com/learn/what-is-the-macos-notch/</loc>
+    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://trynotchnest.silverseahog.com/learn/how-to-customise-macos-menu-bar/</loc>
+    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://trynotchnest.silverseahog.com/learn/notch-nest-vs-boring-notch-vs-notchdrop/</loc>
+    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://trynotchnest.silverseahog.com/learn/best-macos-notch-apps/</loc>
+    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://trynotchnest.silverseahog.com/learn/does-the-mac-notch-actually-do-anything/</loc>
+    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://trynotchnest.silverseahog.com/learn/how-to-use-the-macbook-notch/</loc>
+    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
