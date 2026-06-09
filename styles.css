@@ -722,6 +722,9 @@ button { font: inherit; cursor: pointer; }
     flex-wrap: wrap;
     gap: 10px;
 }
+.footer-lang { display: inline-flex; gap: 14px; }
+.footer-lang a { color: var(--muted); transition: color .15s ease; }
+.footer-lang a:hover, .footer-lang a[aria-current="page"] { color: #fff; }
 
 /* ---------- Hidden iTunes-driven nodes we no longer need on hero ---------- */
 .app-icon-placeholder { display: none !important; }
