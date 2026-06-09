@@ -140,10 +140,13 @@ button { font: inherit; cursor: pointer; }
 }
 
 .nn-brand-mark {
-    width: 24px;
-    height: 24px;
-    border-radius: 6px;
-    background: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    background: transparent;
+    object-fit: cover;
+    flex-shrink: 0;
+    display: block;
 }
 
 .nn-nav-links {
@@ -843,8 +846,10 @@ button { font: inherit; cursor: pointer; }
 .inline-cta-icon {
     width: 56px; height: 56px;
     border-radius: 12px;
-    background: #fff;
+    background: transparent;
+    object-fit: cover;
     flex-shrink: 0;
+    display: block;
 }
 .inline-cta-body { flex: 1; }
 .inline-cta h3 { font-size: 17px; margin-bottom: 4px; font-weight: 600; }
