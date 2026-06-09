@@ -1,14 +1,20 @@
 /* TEAM */
 Creator: Satnam Singh
+Role: Swift Developer
 Contact: 29satnam [at] gmail.com
-Site: https://trynotchnest.silverseahog.com
-App: NotchNest – Power Your Notch
+Site: https://silverseahog.com/
+Twitter: @codetard
+GitHub: github.com/29satnam
+LinkedIn: linkedin.com/in/satnam-singh-948348aa
+
+/* APP */
+NotchNest – Power Your Notch
 Mac App Store: https://apps.apple.com/us/app/notchnest-power-your-notch/id6747612321
+Web: https://trynotchnest.silverseahog.com/
 
 /* SITE */
 Last update: 2026-06-09
-Language: English
+Languages: English, Deutsch, 中文
 Doctype: HTML5
-Standards: HTML5, CSS3, Schema.org, OpenGraph, Sitemaps
-Components: Vanilla JS, no jQuery
+Standards: HTML5, CSS3, Schema.org, OpenGraph, Sitemaps, IndexNow
 Software: Built in Swift (the app), static HTML/CSS (the site)
