@@ -52,7 +52,9 @@
     if(mt) mt.textContent=tr.t; if(ma) ma.textContent=tr.a;
     if(mfill) mfill.style.width=(mpos/tr.dur*100)+'%';
     if(mcur) mcur.textContent=fmt(mpos); if(mdur) mdur.textContent=fmt(tr.dur);
-    if(mplay) mplay.textContent=mplaying?'⏸':'▶';
+    if(mplay) mplay.innerHTML = mplaying
+      ? '<svg viewBox="0 0 24 24"><path d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg>'
+      : '<svg viewBox="0 0 24 24"><path d="M7 5l12 7-12 7z"/></svg>';
   }
   function musicTick(){
     if(!mplaying) return;
@@ -87,8 +89,10 @@
   function renderT(){
     if(tDisp) tDisp.textContent=fmt(trem);
     if(tEl){ tEl.classList.toggle('focus',tmode==='focus'); tEl.classList.toggle('rest',tmode==='rest'); }
-    if(tPh) tPh.innerHTML=(tmode==='focus'?'⏱ Focus':'<span class="ic">🌱</span> Rest')+' (1/1)';
-    if(tPlay) tPlay.textContent=trun?'⏸':'▶';
+    if(tPh) tPh.textContent=(tmode==='focus'?'Focus':'Rest')+' (1/1)';
+    if(tPlay) tPlay.innerHTML = trun
+      ? '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg>'
+      : '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5l12 7-12 7z"/></svg>';
   }
   function tTick(){ if(!trun)return; if(trem>0){trem--;renderT();} else { tmode=tmode==='focus'?'rest':'focus'; trem=tmode==='focus'?FOCUS:REST; renderT(); } }
   if(tPlay) tPlay.addEventListener('click',function(e){ e.stopPropagation(); trun=!trun; if(!tint)tint=setInterval(tTick,1000); renderT(); });
@@ -145,11 +149,14 @@
       .sort(function(a,b){ return (b.pin?1:0)-(a.pin?1:0); })
       .forEach(function(c){
         var el=document.createElement('div'); el.className='nnx-cb'+(c.pin?' pinned':'');
+        var pinSvg='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2l8 8-1.5 1.5-1-1-3.5 3.5v4L14 20l-2-2-3 3-1.5-1.5 3-3-2-2 2-2.5h4L19.5 11l-1-1z"/></svg>';
+        var cpSvg='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 2h7l5 5v11a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm6 1.5V8h4.5z"/><path d="M5 6v14a2 2 0 0 0 2 2h9v-2H7V6z" opacity=".5"/></svg>';
+        var delSvg='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 3h6l1 2h4v2H4V5h4zM6 8h12l-1 13a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1z"/></svg>';
         el.innerHTML='<div class="txt">'+c.x.replace(/</g,'&lt;')+'</div>'+
           '<div class="meta"><span>'+ago(c.t)+'</span><span class="sp"></span>'+
-          '<button class="pin'+(c.pin?' on':'')+'" title="Pin">📌</button>'+
-          '<button class="cp" title="Copy">📄</button>'+
-          '<button class="del" title="Delete">🗑</button></div>';
+          '<button class="pin'+(c.pin?' on':'')+'" title="Pin" aria-label="Pin">'+pinSvg+'</button>'+
+          '<button class="cp" title="Copy" aria-label="Copy">'+cpSvg+'</button>'+
+          '<button class="del" title="Delete" aria-label="Delete">'+delSvg+'</button></div>';
         el.querySelector('.pin').addEventListener('click',function(e){e.stopPropagation();c.pin=!c.pin;renderClip(clipSearch&&clipSearch.value);});
         el.querySelector('.del').addEventListener('click',function(e){e.stopPropagation();var k=SEED.indexOf(c);if(k>=0)SEED.splice(k,1);renderClip(clipSearch&&clipSearch.value);});
         el.querySelector('.cp').addEventListener('click',function(e){e.stopPropagation();if(navigator.clipboard)navigator.clipboard.writeText(c.x).catch(function(){});});
