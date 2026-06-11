@@ -207,7 +207,7 @@ Display release notes
 When deployed to GitHub Pages:
 
 ```
-https://trynotchnest.silverseahog.com/
+https://notchnest.app/
 ├── /                           → index.html
 ├── /whats-new.html            → Release notes page
 ├── /appcast.xml               → Sparkle feed

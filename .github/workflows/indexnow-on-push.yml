@@ -34,9 +34,9 @@ jobs:
           ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
           urls = [l.text for l in tree.getroot().iter(f"{{{ns['s']}}}loc")]
           payload = json.dumps({
-            "host": "trynotchnest.silverseahog.com",
+            "host": "notchnest.app",
             "key": "e348658e6461a8012892dff0e066abe8",
-            "keyLocation": "https://trynotchnest.silverseahog.com/e348658e6461a8012892dff0e066abe8.txt",
+            "keyLocation": "https://notchnest.app/e348658e6461a8012892dff0e066abe8.txt",
             "urlList": urls
           }).encode()
           for ep in ("https://api.indexnow.org/indexnow", "https://www.bing.com/indexnow", "https://yandex.com/indexnow"):

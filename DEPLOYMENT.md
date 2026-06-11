@@ -33,9 +33,9 @@ DOWNLOAD_BASE_URL = "https://github.com/yourusername/notchnest/releases/download
 
 **`scripts/generate_appcast.py`** (line ~98, 103):
 ```python
-ET.SubElement(channel, 'link').text = "https://trynotchnest.silverseahog.com"
+ET.SubElement(channel, 'link').text = "https://notchnest.app"
 # and
-ET.SubElement(item, 'link').text = "https://trynotchnest.silverseahog.com"
+ET.SubElement(item, 'link').text = "https://notchnest.app"
 ```
 
 ### 3. Update Contact Information
@@ -96,12 +96,12 @@ Visit these URLs and verify they work:
 
 ## 🔧 Custom Domain Setup (Optional)
 
-If you're using a custom domain like `trynotchnest.silverseahog.com`:
+If you're using a custom domain like `notchnest.app`:
 
 ### Step 1: Configure GitHub Pages
 
 1. Go to **Settings** → **Pages**
-2. Under "Custom domain", enter: `trynotchnest.silverseahog.com`
+2. Under "Custom domain", enter: `notchnest.app`
 3. Check **Enforce HTTPS** (after DNS propagates)
 4. Click **Save**
 
@@ -109,7 +109,7 @@ If you're using a custom domain like `trynotchnest.silverseahog.com`:
 
 Add these DNS records at your domain provider:
 
-**For subdomain (trynotchnest.silverseahog.com):**
+**For subdomain (notchnest.app):**
 ```
 Type: CNAME
 Name: trynotchnest
@@ -143,7 +143,7 @@ After custom domain is working, update the appcast URL in your macOS app's `Info
 
 ```xml
 <key>SUFeedURL</key>
-<string>https://trynotchnest.silverseahog.com/appcast.xml</string>
+<string>https://notchnest.app/appcast.xml</string>
 ```
 
 ## 🔄 Ongoing Maintenance

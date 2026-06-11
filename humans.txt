@@ -10,7 +10,7 @@ LinkedIn: linkedin.com/in/satnam-singh-948348aa
 /* APP */
 NotchNest – Power Your Notch
 Mac App Store: https://apps.apple.com/us/app/notchnest-power-your-notch/id6747612321
-Web: https://trynotchnest.silverseahog.com/
+Web: https://notchnest.app/
 
 /* SITE */
 Last update: 2026-06-09

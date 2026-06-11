@@ -4,155 +4,155 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://trynotchnest.silverseahog.com/</loc>
+    <loc>https://notchnest.app/</loc>
     <lastmod>2026-06-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://trynotchnest.silverseahog.com/"/>
-    <xhtml:link rel="alternate" hreflang="en-us" href="https://trynotchnest.silverseahog.com/"/>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://trynotchnest.silverseahog.com/"/>
-    <xhtml:link rel="alternate" hreflang="en-in" href="https://trynotchnest.silverseahog.com/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://trynotchnest.silverseahog.com/de/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://trynotchnest.silverseahog.com/zh/"/>
-    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://trynotchnest.silverseahog.com/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://trynotchnest.silverseahog.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://notchnest.app/"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://notchnest.app/"/>
+    <xhtml:link rel="alternate" hreflang="en-gb" href="https://notchnest.app/"/>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://notchnest.app/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://notchnest.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://notchnest.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://notchnest.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notchnest.app/"/>
     <image:image>
-      <image:loc>https://trynotchnest.silverseahog.com/1200x630-banner.jpg</image:loc>
+      <image:loc>https://notchnest.app/1200x630-banner.jpg</image:loc>
       <image:title>NotchNest – Mac Notch App banner</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://trynotchnest.silverseahog.com/assets/notchnest-icon.png</image:loc>
+      <image:loc>https://notchnest.app/assets/notchnest-icon.png</image:loc>
       <image:title>NotchNest app icon</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://trynotchnest.silverseahog.com/assets/notchnest-settings.png</image:loc>
+      <image:loc>https://notchnest.app/assets/notchnest-settings.png</image:loc>
       <image:title>NotchNest settings panel</image:title>
     </image:image>
     <video:video>
-      <video:thumbnail_loc>https://trynotchnest.silverseahog.com/assets/notchnest-poster.webp</video:thumbnail_loc>
+      <video:thumbnail_loc>https://notchnest.app/assets/notchnest-poster.webp</video:thumbnail_loc>
       <video:title>NotchNest Mac Notch App Demo</video:title>
       <video:description>NotchNest turning the MacBook notch into a productivity hub with calendar, Pomodoro timer, AI clipboard, notes, bookmarks, music controls and AirDrop.</video:description>
-      <video:content_loc>https://trynotchnest.silverseahog.com/assets/notchnest-demo.mp4</video:content_loc>
+      <video:content_loc>https://notchnest.app/assets/notchnest-demo.mp4</video:content_loc>
       <video:duration>102</video:duration>
       <video:publication_date>2026-06-02T00:00:00+00:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
     </video:video>
   </url>
   <url>
-    <loc>https://trynotchnest.silverseahog.com/de/</loc>
+    <loc>https://notchnest.app/de/</loc>
     <lastmod>2026-06-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://trynotchnest.silverseahog.com/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://trynotchnest.silverseahog.com/de/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://trynotchnest.silverseahog.com/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://trynotchnest.silverseahog.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://notchnest.app/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://notchnest.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://notchnest.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notchnest.app/"/>
   </url>
   <url>
-    <loc>https://trynotchnest.silverseahog.com/zh/</loc>
+    <loc>https://notchnest.app/zh/</loc>
     <lastmod>2026-06-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://trynotchnest.silverseahog.com/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://trynotchnest.silverseahog.com/de/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://trynotchnest.silverseahog.com/zh/"/>
-    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://trynotchnest.silverseahog.com/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://trynotchnest.silverseahog.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://notchnest.app/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://notchnest.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://notchnest.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://notchnest.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notchnest.app/"/>
   </url>
   <url>
-    <loc>https://trynotchnest.silverseahog.com/whats-new.html</loc>
+    <loc>https://notchnest.app/whats-new.html</loc>
     <lastmod>2026-06-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://trynotchnest.silverseahog.com/privacy-policy.html</loc>
+    <loc>https://notchnest.app/privacy-policy.html</loc>
     <lastmod>2026-06-09T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://trynotchnest.silverseahog.com/learn/</loc>
+    <loc>https://notchnest.app/learn/</loc>
     <lastmod>2026-06-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://trynotchnest.silverseahog.com/learn/what-is-the-macos-notch/</loc>
+    <loc>https://notchnest.app/learn/what-is-the-macos-notch/</loc>
     <lastmod>2026-06-09T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://trynotchnest.silverseahog.com/learn/how-to-customise-macos-menu-bar/</loc>
+    <loc>https://notchnest.app/learn/how-to-customise-macos-menu-bar/</loc>
     <lastmod>2026-06-09T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://trynotchnest.silverseahog.com/learn/notch-nest-vs-boring-notch-vs-notchdrop/</loc>
+    <loc>https://notchnest.app/learn/notch-nest-vs-boring-notch-vs-notchdrop/</loc>
     <lastmod>2026-06-09T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://trynotchnest.silverseahog.com/learn/best-macos-notch-apps/</loc>
+    <loc>https://notchnest.app/learn/best-macos-notch-apps/</loc>
     <lastmod>2026-06-09T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://trynotchnest.silverseahog.com/learn/best-macos-notch-apps/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://trynotchnest.silverseahog.com/de/learn/best-macos-notch-apps/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://trynotchnest.silverseahog.com/zh/learn/best-macos-notch-apps/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://trynotchnest.silverseahog.com/learn/best-macos-notch-apps/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://notchnest.app/learn/best-macos-notch-apps/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://notchnest.app/de/learn/best-macos-notch-apps/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://notchnest.app/zh/learn/best-macos-notch-apps/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notchnest.app/learn/best-macos-notch-apps/"/>
   </url>
   <url>
-    <loc>https://trynotchnest.silverseahog.com/learn/does-the-mac-notch-actually-do-anything/</loc>
+    <loc>https://notchnest.app/learn/does-the-mac-notch-actually-do-anything/</loc>
     <lastmod>2026-06-09T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://trynotchnest.silverseahog.com/learn/how-to-use-the-macbook-notch/</loc>
+    <loc>https://notchnest.app/learn/how-to-use-the-macbook-notch/</loc>
     <lastmod>2026-06-09T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://trynotchnest.silverseahog.com/learn/how-to-use-the-macbook-notch/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://trynotchnest.silverseahog.com/de/learn/how-to-use-the-macbook-notch/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://trynotchnest.silverseahog.com/zh/learn/how-to-use-the-macbook-notch/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://trynotchnest.silverseahog.com/learn/how-to-use-the-macbook-notch/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://notchnest.app/learn/how-to-use-the-macbook-notch/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://notchnest.app/de/learn/how-to-use-the-macbook-notch/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://notchnest.app/zh/learn/how-to-use-the-macbook-notch/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notchnest.app/learn/how-to-use-the-macbook-notch/"/>
   </url>
   <url>
-    <loc>https://trynotchnest.silverseahog.com/de/learn/</loc>
+    <loc>https://notchnest.app/de/learn/</loc>
     <lastmod>2026-06-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://trynotchnest.silverseahog.com/de/learn/how-to-use-the-macbook-notch/</loc>
+    <loc>https://notchnest.app/de/learn/how-to-use-the-macbook-notch/</loc>
     <lastmod>2026-06-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://trynotchnest.silverseahog.com/de/learn/best-macos-notch-apps/</loc>
+    <loc>https://notchnest.app/de/learn/best-macos-notch-apps/</loc>
     <lastmod>2026-06-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://trynotchnest.silverseahog.com/zh/learn/</loc>
+    <loc>https://notchnest.app/zh/learn/</loc>
     <lastmod>2026-06-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://trynotchnest.silverseahog.com/zh/learn/how-to-use-the-macbook-notch/</loc>
+    <loc>https://notchnest.app/zh/learn/how-to-use-the-macbook-notch/</loc>
     <lastmod>2026-06-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://trynotchnest.silverseahog.com/zh/learn/best-macos-notch-apps/</loc>
+    <loc>https://notchnest.app/zh/learn/best-macos-notch-apps/</loc>
     <lastmod>2026-06-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

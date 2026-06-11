@@ -42,7 +42,7 @@ Add the `SUFeedURL` key pointing to your appcast:
 
 ```xml
 <key>SUFeedURL</key>
-<string>https://trynotchnest.silverseahog.com/appcast.xml</string>
+<string>https://notchnest.app/appcast.xml</string>
 ```
 
 Optional but recommended settings:

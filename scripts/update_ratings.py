@@ -23,7 +23,7 @@ INDEX = ROOT / "index.html"
 SITEMAP = ROOT / "sitemap.xml"
 
 APP_ID = "6747612321"
-HOST = "trynotchnest.silverseahog.com"
+HOST = "notchnest.app"
 INDEXNOW_KEY = "e348658e6461a8012892dff0e066abe8"
 
 STOREFRONTS = [

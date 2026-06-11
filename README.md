@@ -2,7 +2,7 @@
 
 > A beautiful, modern landing page for macOS apps with auto-generated Sparkle update feeds. Features App Store integration, release notes, and GitHub Actions automation.
 
-[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://trynotchnest.silverseahog.com)
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://notchnest.app)
 [![Sparkle Compatible](https://img.shields.io/badge/Sparkle-2.x-blue)](https://sparkle-project.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
@@ -306,7 +306,7 @@ python3 -c "import xml.etree.ElementTree as ET; ET.parse('appcast.xml')"
 
 ## 🔗 Useful Links
 
-- **Live Demo**: https://trynotchnest.silverseahog.com
+- **Live Demo**: https://notchnest.app
 - **Sparkle Documentation**: https://sparkle-project.org/documentation/
 - **iTunes API**: https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/
 - **GitHub Pages**: https://docs.github.com/en/pages

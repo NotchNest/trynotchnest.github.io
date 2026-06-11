@@ -52,7 +52,7 @@ This repository contains only public information and open-source code. All files
   - **Occurrences**: 3 files (expected)
 
 **Website URLs:**
-- `trynotchnest.silverseahog.com`
+- `notchnest.app`
   - **Status**: ✅ Safe - public website
   - **Purpose**: Production website URL
 
@@ -184,7 +184,7 @@ The following information is **intentionally public** and safe:
 |-------------|-------|---------|--------|
 | App Store ID | `6747612321` | Public app identifier | ✅ Safe |
 | Contact Email | `29satnam@gmail.com` | Public support contact | ✅ Safe |
-| Website | `trynotchnest.silverseahog.com` | Public website URL | ✅ Safe |
+| Website | `notchnest.app` | Public website URL | ✅ Safe |
 | App Name | NotchNest | Public app name | ✅ Safe |
 | GitHub Repo | Public repository | Open source project | ✅ Safe |
 

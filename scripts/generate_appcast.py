@@ -122,7 +122,7 @@ def create_item_element(app_info):
     ET.SubElement(item, 'title').text = title
     
     # Link to website
-    ET.SubElement(item, 'link').text = "https://trynotchnest.silverseahog.com"
+    ET.SubElement(item, 'link').text = "https://notchnest.app"
     
     # Sparkle version
     sparkle_version = ET.SubElement(item, 'sparkle:version')
@@ -179,7 +179,7 @@ def create_appcast_xml(app_info, existing_items):
     ET.SubElement(channel, 'title').text = f"{APP_NAME}'s Changelog"
     ET.SubElement(channel, 'description').text = "Most recent changes with links to updates."
     ET.SubElement(channel, 'language').text = "en"
-    ET.SubElement(channel, 'link').text = "https://trynotchnest.silverseahog.com"
+    ET.SubElement(channel, 'link').text = "https://notchnest.app"
     
     # Create item for current version
     current_item, current_version = create_item_element(app_info)

@@ -11,7 +11,7 @@ This repository is safe to be public. All information contained is either:
 
 ### Public Information
 - **App Store ID**: `6747612321` - Public, anyone can see this on the App Store
-- **Website URL**: `trynotchnest.silverseahog.com` - Public website
+- **Website URL**: `notchnest.app` - Public website
 - **Contact Email**: `29satnam@gmail.com` - Public contact for support
 - **App Name**: NotchNest - Public app name
 
@@ -52,7 +52,7 @@ find . -type f \( -name "*.html" -o -name "*.py" \) -exec grep -l "6747612321" {
 find . -type f \( -name "*.html" -o -name "*.md" \) -exec grep -l "29satnam@gmail.com" {} \;
 
 # 3. Website URL
-grep -r "trynotchnest.silverseahog.com" scripts/
+grep -r "notchnest.app" scripts/
 ```
 
 ### GitHub Actions Tokens

@@ -35,4 +35,4 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-Sitemap: https://trynotchnest.silverseahog.com/sitemap.xml
+Sitemap: https://notchnest.app/sitemap.xml
