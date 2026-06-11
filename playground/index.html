@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>Notch Playground — Try the MacBook Notch in Your Browser | NotchNest</title>
+<meta name="description" content="Play with a live MacBook notch right in your browser. Hover to expand it into a productivity hub — clock, calendar, Pomodoro timer, music and clipboard. No download." />
+<link rel="canonical" href="https://notchnest.app/playground/" />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<link rel="alternate" hreflang="en" href="https://notchnest.app/playground/" />
+<link rel="alternate" hreflang="x-default" href="https://notchnest.app/playground/" />
+<meta property="og:title" content="Notch Playground — Try the MacBook Notch in Your Browser" />
+<meta property="og:description" content="Hover a live MacBook notch in your browser. It expands into a productivity hub — clock, calendar, Pomodoro, music, clipboard. No download." />
+<meta property="og:url" content="https://notchnest.app/playground/" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://notchnest.app/assets/og/learn-index.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@codetard" />
+<meta name="twitter:creator" content="@codetard" />
+<link rel="stylesheet" href="/styles.css" />
+<link rel="apple-touch-icon" href="/assets/notchnest-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<meta name="theme-color" content="#000000" />
+<meta name="color-scheme" content="dark" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Notch Playground",
+    "url": "https://notchnest.app/playground/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web browser",
+    "browserRequirements": "Requires JavaScript",
+    "description": "An interactive in-browser demo of the MacBook notch as a productivity hub. Hover to expand it into a clock, calendar, Pomodoro timer, music player and clipboard.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "isPartOf": { "@type": "WebSite", "name": "NotchNest", "url": "https://notchnest.app/" },
+    "author": { "@type": "Person", "name": "Satnam Singh", "url": "https://silverseahog.com/" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://notchnest.app/" },
+      { "@type": "ListItem", "position": 2, "name": "Notch Playground", "item": "https://notchnest.app/playground/" }
+    ]
+  }
+]
+</script>
+<style>
+/* ---- Playground-only styles ---- */
+.pg-wrap { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+.pg-head { text-align: center; padding: 48px 0 8px; }
+.pg-head h1 { font-size: clamp(32px, 5vw, 52px); letter-spacing: -0.03em; margin-bottom: 14px; }
+.pg-head p { color: var(--muted); max-width: 56ch; margin: 0 auto; font-size: 18px; }
+.pg-hint { color: var(--muted); font-size: 13px; margin-top: 14px; }
+.pg-hint kbd { background: var(--bg-elev); border: 1px solid var(--border-strong); border-radius: 6px; padding: 2px 7px; font-family: ui-monospace,Menlo,monospace; font-size: 12px; }
+
+/* The faux "desktop" the notch sits on */
+.pg-stage {
+  position: relative;
+  margin: 28px auto 0;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(120% 80% at 50% -10%, #1a1a1a 0%, #000 60%);
+  overflow: hidden;
+  min-height: 460px;
+  isolation: isolate;
+}
+.pg-menubar {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  font-size: 12px;
+  color: #d8d8d8;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  position: relative;
+  z-index: 1;
+}
+.pg-menubar .left { display: flex; gap: 16px; align-items: center; }
+.pg-menubar .left strong { font-weight: 700; }
+.pg-menubar .right { display: flex; gap: 14px; align-items: center; opacity: .85; }
+
+/* The notch */
+.notch {
+  position: absolute;
+  top: 0; left: 50%; transform: translateX(-50%);
+  width: 200px;
+  height: 32px;
+  background: #000;
+  border-radius: 0 0 16px 16px;
+  z-index: 10;
+  cursor: pointer;
+  transition: width .38s cubic-bezier(.2,.8,.2,1), height .38s cubic-bezier(.2,.8,.2,1), border-radius .38s ease;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-top: 0;
+  overflow: hidden;
+}
+.notch .pill {
+  margin-top: 11px;
+  display: flex; align-items: center; gap: 8px;
+  color: #888; font-size: 11px; white-space: nowrap;
+  transition: opacity .15s ease;
+}
+.notch .pill .dot { width: 7px; height: 7px; border-radius: 50%; background: #2a2a2a; }
+
+.notch.open {
+  width: min(560px, 92%);
+  height: 300px;
+  border-radius: 0 0 26px 26px;
+  cursor: default;
+  align-items: stretch;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.8);
+}
+.notch.open .pill { opacity: 0; pointer-events: none; }
+
+.notch-panel {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity .25s ease .12s, transform .25s ease .12s;
+  padding: 16px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 12px;
+  pointer-events: none;
+}
+.notch.open .notch-panel { opacity: 1; transform: none; pointer-events: auto; }
+
+.w {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.w-label { font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: #666; margin-bottom: 8px; font-family: ui-monospace,Menlo,monospace; }
+
+/* Clock + calendar widget */
+.w-clock { grid-row: span 1; }
+.w-clock .time { font-size: 30px; font-weight: 700; letter-spacing: -0.02em; line-height: 1; }
+.w-clock .date { color: #999; font-size: 12px; margin-top: 4px; }
+
+/* Pomodoro */
+.w-pomo { align-items: center; text-align: center; }
+.w-pomo .pomo-time { font-size: 30px; font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.w-pomo .pomo-btns { display: flex; gap: 6px; margin-top: 8px; }
+.w-pomo button {
+  background: #fff; color: #000; border: 0; border-radius: 8px;
+  font-size: 11px; font-weight: 600; padding: 5px 12px; cursor: pointer;
+}
+.w-pomo button.ghost { background: transparent; color: #fff; border: 1px solid #2a2a2a; }
+
+/* Music */
+.w-music { grid-column: span 2; flex-direction: row; align-items: center; gap: 12px; }
+.w-music .cover { width: 44px; height: 44px; border-radius: 8px; background: linear-gradient(135deg,#333,#111); flex-shrink: 0; display:flex;align-items:center;justify-content:center;font-size:20px; }
+.w-music .meta { flex: 1; min-width: 0; }
+.w-music .track { font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.w-music .artist { font-size: 11px; color: #888; }
+.w-music .controls { display: flex; gap: 10px; align-items: center; }
+.w-music .controls button { background: none; border: 0; color: #fff; cursor: pointer; font-size: 15px; opacity: .85; }
+.w-music .controls button:hover { opacity: 1; }
+.w-music .bar { height: 3px; background: #222; border-radius: 3px; margin-top: 6px; overflow: hidden; }
+.w-music .bar i { display: block; height: 100%; width: 38%; background: #fff; border-radius: 3px; animation: pgprog 12s linear infinite; }
+@keyframes pgprog { from { width: 4%; } to { width: 96%; } }
+
+.pg-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 28px 0 8px; }
+.pg-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #fff; color: #000; border-radius: 999px;
+  padding: 12px 20px; font-weight: 600; font-size: 14px;
+}
+.pg-cta.ghost { background: transparent; color: #fff; border: 1px solid var(--border-strong); }
+
+/* Embed box */
+.pg-embed { margin: 40px auto; max-width: 720px; }
+.pg-embed h2 { font-size: 20px; margin-bottom: 6px; }
+.pg-embed p { color: var(--muted); font-size: 14px; margin-bottom: 12px; }
+.pg-embed-row { display: flex; gap: 8px; }
+.pg-embed textarea {
+  flex: 1; background: var(--bg-soft); border: 1px solid var(--border);
+  border-radius: 10px; color: var(--text); font-family: ui-monospace,Menlo,monospace;
+  font-size: 12px; padding: 12px; resize: none; height: 80px;
+}
+.pg-copy { background: #fff; color: #000; border: 0; border-radius: 10px; padding: 0 18px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+.pg-copy.done { background: #16a34a; color: #fff; }
+
+@media (max-width: 560px) {
+  .notch.open { height: 360px; }
+  .notch-panel { grid-template-columns: 1fr; }
+  .w-music { grid-column: span 1; }
+}
+</style>
+</head>
+<body>
+<nav class="nn-nav" aria-label="Primary"><div class="nn-nav-inner">
+  <a class="nn-brand" href="/"><img class="nn-brand-mark" src="/assets/notchnest-icon.png" alt="NotchNest icon" width="28" height="28" /><span>NotchNest</span></a>
+  <div class="nn-nav-links">
+    <a href="/#features">Features</a><a href="/playground/">Playground</a>
+    <a href="/#faq-section">FAQ</a><a href="/learn/" class="nn-nav-keep">Learn</a>
+  </div>
+</div></nav>
+
+<main class="main-container"><div class="pg-wrap">
+  <div class="crumbs"><a href="/">Home</a><span class="sep">/</span><span>Notch Playground</span></div>
+
+  <header class="pg-head">
+    <h1>Try the notch. Right here.</h1>
+    <p>This is a live mock of the MacBook notch. Hover it (or tap on mobile) and it expands into a productivity hub — exactly what <a href="/" style="color:#fff;text-decoration:underline;text-underline-offset:3px;">NotchNest</a> does on your real Mac. The Pomodoro timer actually works.</p>
+    <p class="pg-hint">Hover the black notch ↓ &nbsp;·&nbsp; or press <kbd>Space</kbd></p>
+  </header>
+
+  <!-- The interactive stage -->
+  <div class="pg-stage" id="stage">
+    <div class="pg-menubar">
+      <div class="left">
+        <strong></strong>
+        <span>NotchNest</span>
+        <span style="opacity:.6">File</span>
+        <span style="opacity:.6">Edit</span>
+        <span style="opacity:.6">View</span>
+      </div>
+      <div class="right">
+        <span id="mb-batt">100%</span>
+        <span>􀙇</span>
+        <span id="mb-clock">--:--</span>
+      </div>
+    </div>
+
+    <div class="notch" id="notch" role="button" tabindex="0" aria-label="Expand the notch">
+      <div class="pill"><span class="dot"></span> Hover me <span class="dot"></span></div>
+
+      <div class="notch-panel">
+        <div class="w w-clock">
+          <div class="w-label">Today</div>
+          <div class="time" id="pg-time">--:--</div>
+          <div class="date" id="pg-date">—</div>
+        </div>
+
+        <div class="w w-pomo">
+          <div class="w-label">Pomodoro</div>
+          <div class="pomo-time" id="pomo">25:00</div>
+          <div class="pomo-btns">
+            <button id="pomo-toggle">Start</button>
+            <button class="ghost" id="pomo-reset">Reset</button>
+          </div>
+        </div>
+
+        <div class="w w-music">
+          <div class="cover">🎵</div>
+          <div class="meta">
+            <div class="track" id="pg-track">Midnight City</div>
+            <div class="artist" id="pg-artist">M83</div>
+            <div class="bar"><i></i></div>
+          </div>
+          <div class="controls">
+            <button id="pg-prev" aria-label="Previous">⏮</button>
+            <button id="pg-play" aria-label="Play/Pause">⏸</button>
+            <button id="pg-next" aria-label="Next">⏭</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pg-actions">
+    <a class="pg-cta" href="https://apps.apple.com/us/app/notchnest-power-your-notch/id6747612321" target="_blank" rel="noopener">Get the real thing — free</a>
+    <a class="pg-cta ghost" href="/learn/how-to-use-the-macbook-notch/">How it works</a>
+  </div>
+
+  <!-- Embed -->
+  <section class="pg-embed">
+    <h2>Embed this playground</h2>
+    <p>Writing about the Mac notch? Drop this live demo into your post. Free, no tracking.</p>
+    <div class="pg-embed-row">
+      <textarea id="embed-code" readonly><iframe src="https://notchnest.app/playground/?embed=1" width="100%" height="520" style="border:0;border-radius:16px;overflow:hidden" loading="lazy" title="NotchNest — interactive MacBook notch playground"></iframe></textarea>
+      <button class="pg-copy" id="copy-btn">Copy</button>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-bottom"><span>© <span id="yr"></span> NotchNest · Satnam Singh</span><span><a href="/" style="color:var(--muted)">notchnest.app</a></span></div>
+  </footer>
+</div></main>
+
+<script>
+(function(){
+  var notch = document.getElementById('notch');
+  var stage = document.getElementById('stage');
+
+  // open/close
+  function open(){ notch.classList.add('open'); }
+  function close(){ notch.classList.remove('open'); }
+  notch.addEventListener('mouseenter', open);
+  stage.addEventListener('mouseleave', close);
+  notch.addEventListener('click', function(){ notch.classList.toggle('open'); });
+  notch.addEventListener('keydown', function(e){ if(e.key===' '||e.key==='Enter'){ e.preventDefault(); notch.classList.toggle('open'); } });
+  document.addEventListener('keydown', function(e){ if(e.key===' ' && e.target===document.body){ e.preventDefault(); notch.classList.toggle('open'); } });
+
+  // clock
+  function pad(n){ return (n<10?'0':'')+n; }
+  function tick(){
+    var d = new Date();
+    var hh = d.getHours(), mm = pad(d.getMinutes());
+    var h12 = ((hh+11)%12)+1;
+    var t = h12 + ':' + mm;
+    var t24 = pad(hh) + ':' + mm;
+    var ds = d.toLocaleDateString(undefined,{weekday:'long', month:'long', day:'numeric'});
+    var el;
+    if(el=document.getElementById('pg-time')) el.textContent = t;
+    if(el=document.getElementById('pg-date')) el.textContent = ds;
+    if(el=document.getElementById('mb-clock')) el.textContent = d.toLocaleDateString(undefined,{weekday:'short'})+' '+t24;
+  }
+  tick(); setInterval(tick, 1000);
+
+  // pomodoro (real)
+  var pomoEl = document.getElementById('pomo');
+  var toggle = document.getElementById('pomo-toggle');
+  var reset = document.getElementById('pomo-reset');
+  var remaining = 25*60, running = false, timer = null;
+  function render(){ pomoEl.textContent = pad(Math.floor(remaining/60))+':'+pad(remaining%60); }
+  function startStop(){
+    running = !running;
+    toggle.textContent = running ? 'Pause' : 'Start';
+    if(running){
+      timer = setInterval(function(){
+        if(remaining>0){ remaining--; render(); }
+        else { clearInterval(timer); running=false; toggle.textContent='Done!'; }
+      },1000);
+    } else { clearInterval(timer); }
+  }
+  toggle.addEventListener('click', startStop);
+  reset.addEventListener('click', function(){ clearInterval(timer); running=false; remaining=25*60; toggle.textContent='Start'; render(); });
+  render();
+
+  // music mock
+  var tracks = [
+    ['Midnight City','M83'],['Redbone','Childish Gambino'],['Nightcall','Kavinsky'],
+    ['Instant Crush','Daft Punk'],['Flashing Lights','Kanye West'],['Resonance','HOME']
+  ];
+  var idx = 0, playing = true;
+  var trackEl = document.getElementById('pg-track'), artistEl = document.getElementById('pg-artist'), playBtn = document.getElementById('pg-play');
+  function setTrack(){ trackEl.textContent = tracks[idx][0]; artistEl.textContent = tracks[idx][1]; }
+  document.getElementById('pg-next').addEventListener('click', function(){ idx=(idx+1)%tracks.length; setTrack(); });
+  document.getElementById('pg-prev').addEventListener('click', function(){ idx=(idx-1+tracks.length)%tracks.length; setTrack(); });
+  playBtn.addEventListener('click', function(){ playing=!playing; playBtn.textContent = playing?'⏸':'▶'; });
+
+  // copy embed
+  var copyBtn = document.getElementById('copy-btn');
+  copyBtn.addEventListener('click', function(){
+    var ta = document.getElementById('embed-code');
+    ta.select();
+    navigator.clipboard.writeText(ta.value).then(function(){
+      copyBtn.textContent='Copied!'; copyBtn.classList.add('done');
+      setTimeout(function(){ copyBtn.textContent='Copy'; copyBtn.classList.remove('done'); }, 1800);
+    }).catch(function(){ document.execCommand('copy'); });
+  });
+
+  // embed mode: strip chrome
+  if(new URLSearchParams(location.search).get('embed')==='1'){
+    document.querySelector('.nn-nav').style.display='none';
+    document.querySelector('.pg-head').style.display='none';
+    document.querySelector('.pg-actions').innerHTML='<a class="pg-cta" href="https://notchnest.app/" target="_blank" rel="noopener">Made with NotchNest →</a>';
+    document.querySelector('.pg-embed').style.display='none';
+    document.querySelector('.site-footer').style.display='none';
+    document.querySelector('.crumbs').style.display='none';
+    open();
+  }
+
+  var yr=document.getElementById('yr'); if(yr) yr.textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
