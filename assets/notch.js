@@ -83,36 +83,62 @@
     }
   }
 
-  /* ---------- TIMER (Focus blue / Rest green) ---------- */
-  var tEl=root.querySelector('.nnx-timer'), tDisp=root.querySelector('.nnx-tdisp'), tPh=root.querySelector('.nnx-tph'), tPlay=root.querySelector('.nnx-tplay');
-  var FOCUS=25*60, REST=5*60, tmode='focus', trem=FOCUS, trun=false, tint=null;
+  /* ---------- TIMER (Focus blue / Rest green; space-between layout) ---------- */
+  var tEl=root.querySelector('.nnx-timer'), tDisp=root.querySelector('.nnx-tdisp'),
+      tLbl=root.querySelector('.nnx-tph .lbl'), tPlay=root.querySelector('.nnx-tplay'),
+      tFill=root.querySelector('.nnx-timer .ul i');
+  var FOCUS=25*60, REST=5*60, tmode='focus', tmax=FOCUS, trem=FOCUS, trun=false, tint=null;
   function renderT(){
     if(tDisp) tDisp.textContent=fmt(trem);
-    if(tEl){ tEl.classList.toggle('focus',tmode==='focus'); tEl.classList.toggle('rest',tmode==='rest'); }
-    if(tPh) tPh.textContent=(tmode==='focus'?'Focus':'Rest')+' (1/1)';
+    if(tEl){ tEl.classList.toggle('focus',tmode==='focus'); tEl.classList.toggle('rest',tmode==='rest'); tEl.classList.toggle('running',trun); }
+    if(tLbl) tLbl.textContent=tmode==='focus'?'Focus':'Rest';
+    if(tFill) tFill.style.width=(100*(1-trem/tmax))+'%';
     if(tPlay) tPlay.innerHTML = trun
       ? '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg>'
       : '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5l12 7-12 7z"/></svg>';
   }
-  function tTick(){ if(!trun)return; if(trem>0){trem--;renderT();} else { tmode=tmode==='focus'?'rest':'focus'; trem=tmode==='focus'?FOCUS:REST; renderT(); } }
+  function setMode(m){ tmode=m; tmax=m==='focus'?FOCUS:REST; trem=tmax; }
+  function tTick(){ if(!trun)return; if(trem>0){trem--;renderT();} else { setMode(tmode==='focus'?'rest':'focus'); renderT(); } }
   if(tPlay) tPlay.addEventListener('click',function(e){ e.stopPropagation(); trun=!trun; if(!tint)tint=setInterval(tTick,1000); renderT(); });
   var tReset=root.querySelector('.nnx-treset');
-  if(tReset) tReset.addEventListener('click',function(e){ e.stopPropagation(); trun=false; tmode='focus'; trem=FOCUS; renderT(); });
+  if(tReset) tReset.addEventListener('click',function(e){ e.stopPropagation(); trun=false; setMode('focus'); renderT(); });
   var tSkip=root.querySelector('.nnx-tskip');
-  if(tSkip) tSkip.addEventListener('click',function(e){ e.stopPropagation(); tmode=tmode==='focus'?'rest':'focus'; trem=tmode==='focus'?FOCUS:REST; renderT(); });
+  if(tSkip) tSkip.addEventListener('click',function(e){ e.stopPropagation(); setMode(tmode==='focus'?'rest':'focus'); renderT(); });
   renderT();
 
-  /* ---------- NOTES (type + AI rephrase + save, localStorage) ---------- */
-  var nTa=root.querySelector('.nnx-ntext'), nSave=root.querySelector('.nnx-nsave'), nReph=root.querySelector('.nnx-nrephrase'), nList=root.querySelector('.nnx-nlist');
-  function rephrase(s){
-    s=s.trim(); if(!s) return s;
-    var out=s.charAt(0).toUpperCase()+s.slice(1);
-    out=out.replace(/\bhey\b/i,'Hi there!').replace(/\bgonna\b/i,'going to').replace(/\bwanna\b/i,'want to').replace(/\bu\b/gi,'you');
-    if(!/[.!?]$/.test(out)) out+='.';
-    return out;
+  /* ---------- NOTES (default list + tap-to-edit, color, AI rephrase) ---------- */
+  var notesMod=document.getElementById('nnx-notes');
+  if(notesMod){
+    var nPrompt=notesMod.querySelector('.nnx-nprompt'),
+        nTa=notesMod.querySelector('.nnx-ntext'),
+        nSave=notesMod.querySelector('.nnx-nsave'),
+        nCancel=notesMod.querySelector('.nnx-ncancel'),
+        nReph=notesMod.querySelector('.nnx-nreph'),
+        nList=notesMod.querySelector('.nnx-notes-list'),
+        nColors=notesMod.querySelectorAll('.nnx-colors button'),
+        nColor='b';
+    function rephrase(s){ s=s.trim(); if(!s)return s; var o=s.charAt(0).toUpperCase()+s.slice(1);
+      o=o.replace(/\bhey\b/i,'Hi there!').replace(/\bgonna\b/i,'going to').replace(/\bwanna\b/i,'want to').replace(/\bu\b/gi,'you');
+      if(!/[.!?]$/.test(o)) o+='.'; return o; }
+    function openEdit(){ notesMod.classList.add('editing'); if(nTa){nTa.value='';setTimeout(function(){nTa.focus();},60);} }
+    function closeEdit(){ notesMod.classList.remove('editing'); }
+    if(nPrompt) nPrompt.addEventListener('click',function(e){ e.stopPropagation(); openEdit(); });
+    if(nCancel) nCancel.addEventListener('click',function(e){ e.stopPropagation(); closeEdit(); });
+    if(nReph) nReph.addEventListener('click',function(e){ e.stopPropagation(); if(nTa) nTa.value=rephrase(nTa.value); });
+    nColors.forEach(function(b){ b.addEventListener('click',function(e){ e.stopPropagation(); nColor=b.dataset.c; nColors.forEach(function(x){x.classList.toggle('on',x===b);}); }); });
+    if(nSave) nSave.addEventListener('click',function(e){ e.stopPropagation();
+      var v=(nTa&&nTa.value||'').trim(); if(!v){ closeEdit(); return; }
+      var note=document.createElement('div'); note.className='nnx-note';
+      note.innerHTML='<div class="nbody"><div class="ntext"></div><span class="nts">now</span><div class="nbar '+nColor+'"></div></div>'+
+        '<button class="nchk" aria-label="Mark complete"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg></button>';
+      note.querySelector('.ntext').textContent=v;
+      var firstNote=nList.querySelector('.nnx-note');
+      if(firstNote) nList.insertBefore(note,firstNote); else nList.appendChild(note);
+      closeEdit();
+    });
+    // check toggles
+    notesMod.addEventListener('click',function(e){ var b=e.target.closest('.nchk'); if(b){ e.stopPropagation(); b.classList.toggle('done'); b.querySelector('svg').setAttribute('fill', b.classList.contains('done')?'currentColor':'none'); } });
   }
-  if(nReph) nReph.addEventListener('click',function(e){ e.stopPropagation(); if(nTa) nTa.value=rephrase(nTa.value); });
-  if(nSave) nSave.addEventListener('click',function(e){ e.stopPropagation(); var v=(nTa&&nTa.value||'').trim(); if(!v)return; if(nList){var p=document.createElement('div');p.className='nnx-note-saved';p.style.cssText='font-size:10px;color:#aaa;margin-top:4px';p.textContent='“'+v+'”';nList.prepend(p);} if(nTa)nTa.value=''; });
 
   /* ---------- MIRROR (real webcam) ---------- */
   var mir=root.querySelector('.nnx-mirror'), mirVid=root.querySelector('.nnx-mirror video'), mstream=null;
