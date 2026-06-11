@@ -435,6 +435,8 @@ img,video,svg{display:block;max-width:100%;height:auto}
     </style>
     <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="styles.css"></noscript>
+    <link rel="stylesheet" href="assets/notch.css">
+    <script defer src="assets/notch.js"></script>
     <link rel="apple-touch-icon" href="assets/notchnest-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -483,8 +485,8 @@ img,video,svg{display:block;max-width:100%;height:auto}
     <main class="main-container">
         <div class="content-wrapper">
             <!-- Hero -->
-            <section class="hero" aria-label="NotchNest hero">
-                <div class="hero-grid">
+            <section class="hero hero-centered" aria-label="NotchNest hero">
+                <div class="hero-solo">
                     <div class="hero-copy">
                         <span class="eyebrow">
                             <span class="eyebrow-dot" aria-hidden="true"></span>
@@ -502,12 +504,12 @@ img,video,svg{display:block;max-width:100%;height:auto}
                                aria-label="Download NotchNest on the Mac App Store">
                                 <img src="assets/download-appstore.svg" alt="Download on the Mac App Store" />
                             </a>
-                            <button class="btn-ghost" type="button" id="hero-fullscreen-btn"
-                                    aria-label="Watch demo full-screen">
+                            <button class="btn-ghost" type="button" id="hero-open-btn"
+                                    aria-label="Open the interactive notch">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                    <path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/>
+                                    <path d="M5 12h14M13 6l6 6-6 6"/>
                                 </svg>
-                                Watch full-screen
+                                Try the notch below
                             </button>
                             <a class="btn-ghost" href="whats-new.html">What's new</a>
                         </div>
@@ -520,18 +522,140 @@ img,video,svg{display:block;max-width:100%;height:auto}
                         </div>
                     </div>
 
-                    <div class="hero-stage" id="hero-stage">
-                        <video class="hero-video demo-video" id="hero-video"
-                               width="1920" height="1200"
-                               autoplay muted loop playsinline preload="metadata"
-                               poster="assets/notchnest-poster.webp"
-                               aria-label="NotchNest demo: widgets shown inside the MacBook notch">
-                            <source src="assets/notchnest-demo.webm" type="video/webm" />
-                            <source src="assets/notchnest-demo.mp4" type="video/mp4" />
-                            <img src="assets/notchnest-poster.webp" width="1920" height="1200"
-                                 alt="NotchNest widgets in the MacBook notch" loading="lazy" decoding="async" />
-                        </video>
-                    </div>
+                </div>
+
+                <div class="hero-stage" id="hero-stage" style="padding:0;overflow:visible;background:transparent;border:0;box-shadow:none">
+                        <div class="nnx-wrap" aria-label="Interactive NotchNest demo">
+                            <div class="nnx-menubar" aria-hidden="true">
+                                <span class="l"><b></b><b>NotchNest</b><span>File</span><span>Edit</span><span>View</span></span>
+                                <span class="r"><span class="nnx-cam-dot"></span><span>􀙇</span><span class="nnx-mbclock">9:41</span></span>
+                            </div>
+
+                            <div class="nnx" id="nnx" role="button" tabindex="0" aria-label="Hover to open the NotchNest notch">
+                                <!-- collapsed pill -->
+                                <div class="nnx-pill">
+                                    <span class="nnx-pill-art" style="background-image:url('assets/notchnest-icon.png')"></span>
+                                    <span class="nnx-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                                </div>
+
+                                <!-- expanded panel -->
+                                <div class="nnx-panel">
+                                    <div class="nnx-bar">
+                                        <div class="nnx-tabs">
+                                            <button class="nnx-tab active" data-tab="home" title="Home" aria-label="Home">⌂</button>
+                                            <button class="nnx-tab" data-tab="tray" title="AirDrop & Tray" aria-label="AirDrop and Tray">📥</button>
+                                            <button class="nnx-tab" data-tab="game" title="Game" aria-label="Game">🎮</button>
+                                            <button class="nnx-tab" data-tab="clip" title="Clipboard" aria-label="Clipboard">📋</button>
+                                        </div>
+                                        <div class="nnx-sys">
+                                            <button title="Settings" aria-label="Settings">⚙</button>
+                                            <button class="nnx-close" title="Close" aria-label="Close">✕</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="nnx-views">
+                                        <!-- HOME -->
+                                        <div class="nnx-view show" data-view="home">
+                                            <div class="nnx-home">
+                                                <div class="nnx-card nnx-music">
+                                                    <div class="nnx-cover" style="background-image:url('assets/notchnest-icon.png')"><span class="sp">♪</span></div>
+                                                    <div class="nnx-music-meta">
+                                                        <div class="t nnx-mtitle">W.T.P.</div>
+                                                        <div class="a nnx-martist">Eminem</div>
+                                                        <div class="nnx-scrub"><i class="nnx-mfill"></i></div>
+                                                        <div class="nnx-times"><span class="nnx-mcur">0:42</span><span class="nnx-mdur">3:58</span></div>
+                                                        <div class="nnx-mctl">
+                                                            <button class="nnx-mprev" aria-label="Previous">⏮</button>
+                                                            <button class="nnx-mplay" aria-label="Play/pause">⏸</button>
+                                                            <button class="nnx-mnext" aria-label="Next">⏭</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="nnx-card nnx-cal">
+                                                    <div class="mh"><span class="nnx-month">Jun</span><span class="ai">✦</span></div>
+                                                    <div class="nnx-ev"><b>Badminton Practice</b><span>6:00 – 7:30 PM</span></div>
+                                                    <div class="nnx-ev g"><b>Dinner at MyFresh</b><span>8:00 – 9:15 PM</span></div>
+                                                    <div class="nnx-days">
+                                                        <div class="nnx-day"><span class="dn">Thu</span><b>11</b></div>
+                                                        <div class="nnx-day on"><span class="dn">Fri</span><b>12</b></div>
+                                                        <div class="nnx-day"><span class="dn">Sat</span><b>13</b></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="nnx-card nnx-bm">
+                                                    <div class="nnx-bm-grid">
+                                                        <a href="https://imdb.com" target="_blank" rel="noopener" title="IMDb">🎬</a>
+                                                        <a href="https://google.com" target="_blank" rel="noopener" title="Google">🔎</a>
+                                                        <a href="https://claude.ai" target="_blank" rel="noopener" title="Claude">✳️</a>
+                                                        <a href="https://instagram.com/codetard" target="_blank" rel="noopener" title="Instagram">📸</a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="nnx-card nnx-notes">
+                                                    <div class="ph">What's on your mind?</div>
+                                                    <textarea class="nnx-ntext" placeholder="Type a note…">Your future is created by what you do today.</textarea>
+                                                    <div class="nrow">
+                                                        <span class="nnx-dot r"></span><span class="nnx-dot b"></span><span class="nnx-dot g"></span>
+                                                        <button class="nnx-nrephrase rephrase" aria-label="AI rephrase">✦ Rephrase</button>
+                                                        <span class="sp"></span>
+                                                        <button class="nnx-nsave" aria-label="Save note">✓</button>
+                                                    </div>
+                                                    <div class="nnx-nlist"></div>
+                                                </div>
+
+                                                <div class="nnx-card nnx-timer focus">
+                                                    <div class="ph nnx-tph">⏱ Focus (1/1)</div>
+                                                    <div class="tt nnx-tdisp">25:00</div>
+                                                    <div class="ul"></div>
+                                                    <div class="nnx-tctl">
+                                                        <button class="nnx-treset" aria-label="Reset">↺</button>
+                                                        <button class="nnx-tplay" aria-label="Start/pause">▶</button>
+                                                        <button class="nnx-tskip" aria-label="Skip">⏭</button>
+                                                    </div>
+                                                </div>
+
+                                                <div class="nnx-card nnx-mirror" role="button" tabindex="0" aria-label="Toggle camera mirror">
+                                                    <div class="ic">◉</div>
+                                                    <div class="lb">Mirror</div>
+                                                    <video playsinline muted></video>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- TRAY -->
+                                        <div class="nnx-view" data-view="tray">
+                                            <div class="nnx-tray">
+                                                <div class="ad"><div class="ic">􀊅</div><div class="lb">AirDrop</div></div>
+                                                <div class="nnx-drop drop"><div class="ic">📥</div><div>Drop Files, Folders and Links Here</div><div class="nudge">Real AirDrop lives in the Mac app →</div></div>
+                                            </div>
+                                        </div>
+
+                                        <!-- GAME -->
+                                        <div class="nnx-view" data-view="game">
+                                            <div class="nnx-game">
+                                                <canvas class="nnx-gcanvas"></canvas>
+                                                <div class="nnx-ghint hint">PRESS SPACE — JUMP<br>HOLD — SKID</div>
+                                                <div class="nnx-gstart start">CLICK / SPACE TO START</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- CLIPBOARD -->
+                                        <div class="nnx-view" data-view="clip">
+                                            <div class="nnx-clip">
+                                                <div class="nnx-clip-top">
+                                                    <label class="nnx-search">🔎<input class="nnx-clipsearch" type="text" placeholder="Search clipboard…" /></label>
+                                                    <button class="nnx-clipclear">Clear Clipboard History</button>
+                                                </div>
+                                                <div class="nnx-cards"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="nnx-cta-line" style="position:absolute;bottom:12px;left:0;right:0;text-align:center;font-size:12px;color:var(--muted)">Hover the notch ↑ — it's the real thing</p>
+                        </div>
                 </div>
 
                 <!-- Stats strip -->
