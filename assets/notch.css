@@ -179,19 +179,20 @@
 .nnx-game .start{position:absolute;top:42%;left:0;right:0;text-align:center;font-family:ui-monospace,Menlo,monospace;font-weight:700;color:#fff;font-size:14px;letter-spacing:2px}
 
 /* ---- CLIPBOARD ---- */
-.nnx-clip{display:flex;flex-direction:column;height:100%;padding:10px 14px 14px}
-.nnx-clip-top{display:flex;align-items:center;gap:10px;margin-bottom:10px;border-bottom:1px solid var(--nx-sep);padding-bottom:10px}
+.nnx-clip{display:flex;flex-direction:column;height:100%;padding:8px 14px 12px}
+.nnx-clip-top{display:flex;align-items:center;gap:10px;margin-bottom:8px;border-bottom:1px solid var(--nx-sep);padding-bottom:6px}
 .nnx-search{flex:1;display:flex;align-items:center;gap:8px;background:var(--nx-fill);border-radius:12px;padding:7px 12px;color:var(--nx-sec)}
 .nnx-search svg{width:14px;height:14px;fill:var(--nx-sec)}
 .nnx-search input{flex:1;background:0;border:0;color:var(--nx-pri);font:inherit;font-size:var(--nx-fs-sec);outline:0}
 .nnx-search input::placeholder{color:var(--nx-sec)}
 .nnx-clipclear{background:0;border:0;color:var(--nx-sec);font-size:var(--nx-fs-sec);padding:0 6px;cursor:pointer;white-space:nowrap;font-family:inherit}
 .nnx-clipclear:hover{color:var(--nx-pri)}
-.nnx-cards{display:flex;gap:10px;overflow-x:auto;flex:1;padding-bottom:4px}
-.nnx-cb{width:140px;flex-shrink:0;background:rgba(255,255,255,.06);border-radius:12px;padding:12px;display:flex;flex-direction:column;justify-content:space-between}
+.nnx-cards{display:flex;gap:10px;overflow-x:auto;flex:1;padding-bottom:2px;scrollbar-width:none}
+.nnx-cards::-webkit-scrollbar{display:none}
+.nnx-cb{width:150px;flex-shrink:0;background:rgba(255,255,255,.06);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;justify-content:space-between}
 .nnx-cb.pinned{background:rgba(74,163,255,.14)}
 .nnx-cb .txt{font-size:var(--nx-fs-sec);font-weight:var(--nx-fw-sec);line-height:1.35;color:var(--nx-pri);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.nnx-cb .meta{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:var(--nx-fs-cap);color:var(--nx-sec)}
+.nnx-cb .meta{display:flex;align-items:center;gap:8px;margin-top:6px;font-size:var(--nx-fs-cap);color:var(--nx-sec)}
 .nnx-cb .meta .sp{flex:1}
 .nnx-cb .meta button{background:0;border:0;cursor:pointer;padding:0;display:inline-flex;opacity:0;transition:opacity .12s ease}
 .nnx-cb:hover .meta button{opacity:1}
