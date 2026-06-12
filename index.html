@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>NotchNest — Make Your MacBook's Notch Useful</title>
     <meta name="description"
         content="NotchNest turns your MacBook notch into a productivity hub — AI clipboard, calendar, notes, Pomodoro, music, AirDrop. Free on the Mac App Store." />
@@ -54,7 +54,7 @@
         "description": "NotchNest turns your MacBook's notch into a productivity hub with AI clipboard, calendar briefings, Quick Notes, Pomodoro timer, music control, AirDrop, File-Tray and a camera mirror. On-device Apple Intelligence keeps everything private.",
         "softwareVersion": "1.2.3",
         "datePublished": "2025-07-29T00:00:00+00:00",
-        "dateModified": "2026-06-03T04:17:15+00:00",
+        "dateModified": "2026-06-13T00:00:00+00:00",
         "inLanguage": ["en", "de", "zh"],
         "featureList": [
           "AI Clipboard Manager with on-device Apple Intelligence",
@@ -245,6 +245,7 @@
       {
         "@context": "https://schema.org",
         "@type": "Organization",
+        "@id": "https://notchnest.app/#organization",
         "name": "NotchNest",
         "url": "https://notchnest.app/",
         "logo": "https://notchnest.app/assets/notchnest-icon.png",
@@ -1009,59 +1010,7 @@ img,video,svg{display:block;max-width:100%;height:auto}
         </div>
     </main>
 
-    <!-- Live worldwide ratings aggregator (no jQuery) -->
-    <script>
-      (function () {
-        var APP_ID = "6747612321";
-        var CACHE_KEY = "notchnest_ratings_v2";
-        var CACHE_MS = 6 * 60 * 60 * 1000; // 6h
-        // Top App Store storefronts by ratings volume
-        var STORES = [
-          "us","gb","de","fr","jp","cn","in","ca","au","kr","br","es","it","mx",
-          "nl","se","no","dk","fi","pl","tr","ru","hk","tw","sg","th","vn","my",
-          "id","ph","nz","ie","be","at","ch","pt","gr","cz","hu","ro","sa","ae",
-          "il","za","ar","cl","co"
-        ];
-
-        function readCache() {
-          try {
-            var s = localStorage.getItem(CACHE_KEY);
-            if (!s) return null;
-            var o = JSON.parse(s);
-            if (Date.now() - o.t > CACHE_MS) return null;
-            return o.data;
-          } catch (e) { return null; }
-        }
-        function writeCache(data) {
-          try { localStorage.setItem(CACHE_KEY, JSON.stringify({ t: Date.now(), data: data })); } catch (e) {}
-        }
-
-        function paint(data) {
-          if (!data || !data.count || data.count < 1) return;
-          var val = data.avg.toFixed(1);
-          var cnt = data.count.toLocaleString("en-US");
-          document.querySelectorAll('[data-rating-value]').forEach(function (n) { n.textContent = val; });
-          document.querySelectorAll('[data-rating-count]').forEach(function (n) { n.textContent = cnt; });
-        }
-
-        async function aggregate() {
-          var totalCount = 0, weighted = 0;
-          var results = await Promise.allSettled(STORES.map(function (c) {
-            return fetch("https://itunes.apple.com/lookup?id=" + APP_ID + "&country=" + c, { cache: "no-store" })
-              .then(function (r) { return r.json(); })
-              .then(function (j) { return (j.results && j.results[0]) || null; });
-          }));
-          results.forEach(function (r) {
-            if (r.status !== "fulfilled" || !r.value) return;
-            var c = r.value.userRatingCount || 0;
-            var v = r.value.averageUserRating || 0;
-            if (c >14< 1) return null;
-          return { avg: weighted / totalCount, count: totalCount };
-        }
-
-        // Baked global aggregate (4.7 / 1,008) — live override disabled.
-      })();
-    </script>
+    <!-- Ratings (4.7 / 1,008) are baked into the markup; no live override. -->
 
     <script defer src="script.js"></script>
 

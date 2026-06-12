@@ -32,3 +32,6 @@ __pycache__/
 .Python
 venv/
 env/
+
+# Local Claude Code dev config
+.claude/
