@@ -86,7 +86,7 @@
 /* calendar — events top, day strip bottom; spacing tuned so day numerals fit fully */
 .nnx-cal{width:184px;flex-shrink:0;justify-content:flex-start;overflow:hidden}
 .nnx-cal .mh{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
-.nnx-cal .mh b{font-size:var(--nx-fs-pri);font-weight:var(--nx-fw-pri);color:var(--nx-pri)}
+.nnx-cal .mh b{font-size:var(--nx-fs-sec);font-weight:var(--nx-fw-pri);color:var(--nx-pri)}
 .nnx-cal .mh .ai{color:var(--nx-sec);display:inline-flex}
 .nnx-ev{margin-bottom:3px;padding-left:8px;border-left:2.5px solid #c07cf0}
 .nnx-ev:last-of-type{margin-bottom:0}
@@ -165,8 +165,8 @@
 .nnx-tray{display:flex;height:100%}
 .nnx-tray .ad{width:150px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;border-right:1px solid var(--nx-sep);color:var(--nx-sec)}
 .nnx-tray .ad svg{width:30px;height:30px;fill:var(--nx-sec)}
-.nnx-tray .ad .lb{font-size:var(--nx-fs-sec);margin-top:9px}
-.nnx-tray .drop{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--nx-sec);border:2px dashed transparent;transition:border-color .15s,background .15s;border-radius:16px;margin:16px;font-size:var(--nx-fs-pri)}
+.nnx-tray .ad .lb{font-size:var(--nx-fs-cap);margin-top:9px}
+.nnx-tray .drop{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--nx-sec);border:2px dashed transparent;transition:border-color .15s,background .15s;border-radius:16px;margin:16px;font-size:var(--nx-fs-sec)}
 .nnx-tray .drop.over{border-color:var(--nx-blue);background:rgba(74,163,255,.08);color:#cfe6ff}
 .nnx-tray .drop svg{width:30px;height:30px;fill:var(--nx-sec);margin-bottom:10px}
 .nnx-tray .drop .nudge{font-size:var(--nx-fs-cap);color:var(--nx-blue);margin-top:10px;display:none}
