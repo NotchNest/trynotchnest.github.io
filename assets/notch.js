@@ -31,7 +31,16 @@
     if (name!=='home') stopMirror();
     if (name==='game') initGame();
   }
-  tabs.forEach(function(t){ t.addEventListener('click', function(ev){ ev.stopPropagation(); show(t.dataset.tab); }); });
+  var hoverSwitchTimer=null;
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(ev){ ev.stopPropagation(); show(t.dataset.tab); });
+    t.addEventListener('mouseenter', function(){
+      if(!root.classList.contains('open')) return;
+      clearTimeout(hoverSwitchTimer);
+      hoverSwitchTimer=setTimeout(function(){ show(t.dataset.tab); }, 80);
+    });
+    t.addEventListener('mouseleave', function(){ clearTimeout(hoverSwitchTimer); });
+  });
   var sysClose = root.querySelector('.nnx-close');
   if (sysClose) sysClose.addEventListener('click', function(e){ e.stopPropagation(); close(); });
 
@@ -91,12 +100,16 @@
   /* ---------- TIMER (Focus blue / Rest green; space-between layout) ---------- */
   var tEl=root.querySelector('.nnx-timer'), tDisp=root.querySelector('.nnx-tdisp'),
       tLbl=root.querySelector('.nnx-tph .lbl'), tPlay=root.querySelector('.nnx-tplay'),
+      tIc=root.querySelector('.nnx-tic'),
       tFill=root.querySelector('.nnx-timer .ul i');
   var FOCUS=25*60, REST=5*60, tmode='focus', tmax=FOCUS, trem=FOCUS, trun=false, tint=null;
+  var SF_BRAIN='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.5 2.5a3 3 0 0 0-3 3 2.5 2.5 0 0 0-1.7 4.3A3 3 0 0 0 4 14.5a3 3 0 0 0 4.5 2.6V21h2.25V3.6A3 3 0 0 0 8.5 2.5zm7 0a3 3 0 0 0-2.25 1.1V21h2.25v-5.9A3 3 0 0 0 20 12.5a3 3 0 0 0-.2-3.7 2.5 2.5 0 0 0-1.8-4.3 3 3 0 0 0-2.5-2z"/></svg>';
+  var SF_LEAF='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 19c4-1 7-2 10-5s4-7 4-10c-3 0-7 1-10 4S6 14 5 19zm0 0 4-4"/></svg>';
   function renderT(){
     if(tDisp) tDisp.textContent=fmt(trem);
     if(tEl){ tEl.classList.toggle('focus',tmode==='focus'); tEl.classList.toggle('rest',tmode==='rest'); tEl.classList.toggle('running',trun); }
     if(tLbl) tLbl.textContent=tmode==='focus'?'Focus':'Rest';
+    if(tIc) tIc.innerHTML=tmode==='focus'?SF_BRAIN:SF_LEAF;
     if(tFill) tFill.style.width=(100*(1-trem/tmax))+'%';
     if(tPlay) tPlay.innerHTML = trun
       ? '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg>'

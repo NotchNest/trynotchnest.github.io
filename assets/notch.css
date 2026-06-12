@@ -14,7 +14,9 @@
   --nx-fill:rgba(255,255,255,.10); --nx-fill2:rgba(255,255,255,.05); --nx-sep:rgba(255,255,255,.21);
   --nx-blue:#4aa3ff; --nx-green:#34d399;
   position:relative;width:100%;display:flex;justify-content:center;min-height:300px;
-  background:radial-gradient(120% 90% at 50% -25%, #1b1b1d 0%, #050506 62%);
+  background:
+    radial-gradient(120% 70% at 50% 0%, rgba(255,255,255,.05) 0%, transparent 60%),
+    linear-gradient(180deg, #2a2a2e 0%, #1a1a1e 55%, #131316 100%);
   border:1px solid var(--border);border-radius:18px;overflow:hidden;
   font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display",Inter,sans-serif;
 }
@@ -82,7 +84,7 @@
 .nnx-mctl .nnx-mplay svg{width:26px;height:26px}
 
 /* calendar — events top, day strip bottom; spacing tuned so day numerals fit fully */
-.nnx-cal{width:170px;flex-shrink:0;justify-content:flex-start;padding-bottom:10px}
+.nnx-cal{width:170px;flex-shrink:0;justify-content:flex-start}
 .nnx-cal .mh{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px}
 .nnx-cal .mh b{font-size:var(--nx-fs-sec);font-weight:var(--nx-fw-pri);color:var(--nx-pri)}
 .nnx-cal .mh .ai{color:var(--nx-sec);display:inline-flex}
@@ -130,11 +132,13 @@
 
 /* timer — space-between: mode pill / time+progress / controls */
 .nnx-timer{width:150px;flex-shrink:0;align-items:center;justify-content:space-between;text-align:center}
-.nnx-tph{display:inline-flex;align-items:center;gap:5px;font-size:var(--nx-fs-cap);font-weight:var(--nx-fw-pri);color:var(--nx-pri);padding:4px 9px;border-radius:999px;background:rgba(74,163,255,.12)}
-.nnx-timer.rest .nnx-tph{background:rgba(52,211,153,.12)}
-.nnx-tph .sprint{color:var(--nx-sec);font-weight:var(--nx-fw-sec);font-size:var(--nx-fs-mini)}
+.nnx-tph{display:inline-flex;align-items:center;gap:5px;font-size:var(--nx-fs-cap);font-weight:var(--nx-fw-sec);color:var(--nx-blue);padding:4px 9px;border-radius:999px;background:rgba(74,163,255,.12)}
+.nnx-timer.rest .nnx-tph{background:rgba(52,211,153,.12);color:var(--nx-green)}
+.nnx-tph .ic{display:inline-flex}
+.nnx-tph .ic svg{width:11px;height:11px;fill:currentColor}
+.nnx-tph .sprint{color:var(--nx-sec);font-weight:var(--nx-fw-sec);font-size:var(--nx-fs-mini);margin-left:1px}
 .nnx-tmid{display:flex;flex-direction:column;align-items:center;gap:7px}
-.nnx-timer .tt{font-size:34px;font-weight:500;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums;line-height:1;color:var(--nx-pri)}
+.nnx-timer .tt{font-size:35px;font-weight:500;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums;line-height:1;color:var(--nx-pri);letter-spacing:-.02em}
 .nnx-timer.focus.running .tt{color:var(--nx-blue)}.nnx-timer.rest.running .tt{color:var(--nx-green)}
 .nnx-timer .ul{height:2px;width:96px;border-radius:2px;background:rgba(255,255,255,.3);position:relative;overflow:hidden}
 .nnx-timer .ul i{position:absolute;left:0;top:0;bottom:0;width:0%;background:var(--nx-blue);transition:width .3s ease}
@@ -146,11 +150,12 @@
 .nnx-timer.rest .nnx-tctl .nnx-tplay{background:rgba(52,211,153,.2)}
 .nnx-tctl .nnx-tplay svg{width:16px;height:16px}
 
-/* mirror — camera centered */
+/* mirror — round camera puck */
 .nnx-mirror{width:150px;flex-shrink:0;align-items:center;justify-content:center;cursor:pointer}
-.nnx-mirror .ic svg{width:30px;height:30px;fill:var(--nx-sec)}
+.nnx-mirror .ic{width:110px;height:110px;border-radius:50%;background:radial-gradient(circle at 50% 35%, #2a2a2e 0%, #141417 80%);display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.08)}
+.nnx-mirror .ic svg{width:34px;height:34px;fill:var(--nx-sec)}
 .nnx-mirror .lb{font-size:var(--nx-fs-cap);color:var(--nx-sec);margin-top:9px}
-.nnx-mirror video{width:100%;height:88%;object-fit:cover;border-radius:14px;display:none}
+.nnx-mirror video{width:120px;height:120px;object-fit:cover;border-radius:50%;display:none}
 .nnx-mirror.live{width:160px}
 .nnx-mirror.live .ic,.nnx-mirror.live .lb{display:none}
 .nnx-mirror.live video{display:block}
