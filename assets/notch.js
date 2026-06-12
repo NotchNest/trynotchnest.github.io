@@ -103,8 +103,8 @@
       tIc=root.querySelector('.nnx-tic'),
       tFill=root.querySelector('.nnx-timer .ul i');
   var FOCUS=25*60, REST=5*60, tmode='focus', tmax=FOCUS, trem=FOCUS, trun=false, tint=null;
-  var SF_BRAIN='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.5 2.5a3 3 0 0 0-3 3 2.5 2.5 0 0 0-1.7 4.3A3 3 0 0 0 4 14.5a3 3 0 0 0 4.5 2.6V21h2.25V3.6A3 3 0 0 0 8.5 2.5zm7 0a3 3 0 0 0-2.25 1.1V21h2.25v-5.9A3 3 0 0 0 20 12.5a3 3 0 0 0-.2-3.7 2.5 2.5 0 0 0-1.8-4.3 3 3 0 0 0-2.5-2z"/></svg>';
-  var SF_LEAF='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 19c4-1 7-2 10-5s4-7 4-10c-3 0-7 1-10 4S6 14 5 19zm0 0 4-4"/></svg>';
+  var SF_BRAIN='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.4 2.4c-1.2 0-2.3.7-2.8 1.8a2.5 2.5 0 0 0-2.8 2.5c0 .5.1 1 .4 1.4a2.5 2.5 0 0 0-.5 4.1 2.4 2.4 0 0 0 .8 3.6 2.6 2.6 0 0 0 .9 3 3 3 0 0 0 5.6-1.5V4.4c0-1.1-.9-2-2-2h-.6zm5.2 0c-1.1 0-2 .9-2 2v13c0 1.7 1.4 3 3 3a3 3 0 0 0 2.6-1.6 2.6 2.6 0 0 0 .9-3 2.4 2.4 0 0 0 .8-3.6 2.5 2.5 0 0 0-.5-4.1c.3-.4.4-.9.4-1.4a2.5 2.5 0 0 0-2.8-2.5 3 3 0 0 0-2.8-1.8h-.6z"/></svg>';
+  var SF_LEAF='<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="4.6" r="2.2"/><path d="M12 8c-2.4 0-4.4 2-4.4 4.4v.5l3 1.1v2.6c0 .3.2.5.5.6l.7.2-3.5 1.2c-1.6.5-3 1.2-3 1.9 0 .9 3.9 1.5 8.7 1.5s8.7-.6 8.7-1.5c0-.7-1.4-1.4-3-1.9l-3.5-1.2.7-.2c.3-.1.5-.3.5-.6V14l3-1.1v-.5c0-2.4-2-4.4-4.4-4.4z"/></svg>';
   function renderT(){
     if(tDisp) tDisp.textContent=fmt(trem);
     if(tEl){ tEl.classList.toggle('focus',tmode==='focus'); tEl.classList.toggle('rest',tmode==='rest'); tEl.classList.toggle('running',trun); }
