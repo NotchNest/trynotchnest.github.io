@@ -26,8 +26,12 @@
 .nnx-wrap.cam-on .nnx-cam-dot{display:inline-block}
 
 /* the notch */
-.nnx{position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:10;background:#000;border:1px solid rgba(255,255,255,.06);border-top:0;border-radius:0 0 13px 13px;width:200px;height:30px;overflow:hidden;cursor:pointer;transition:width .44s cubic-bezier(.16,1,.3,1),height .5s cubic-bezier(.16,1,.3,1),border-radius .5s ease;box-shadow:0 8px 30px rgba(0,0,0,.55);will-change:width,height}
-.nnx.open{width:min(1040px,97%);height:186px;border-radius:0 0 24px 24px;cursor:default;box-shadow:0 34px 90px rgba(0,0,0,.9)}
+.nnx{position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:10;background:#000;border:1px solid rgba(255,255,255,.06);border-top:0;border-radius:0 0 13px 13px;width:200px;height:30px;overflow:hidden;cursor:pointer;transition:width .44s cubic-bezier(.16,1,.3,1),height .5s cubic-bezier(.16,1,.3,1),border-radius .5s ease;box-shadow:0 8px 30px rgba(0,0,0,.55);will-change:width,height;
+  /* Swift-mirrored type scale: .headline 13 · .subheadline 12 · .caption 11 · .caption2 10 */
+  --nx-fs-pri:13px; --nx-fs-sec:12px; --nx-fs-cap:11px; --nx-fs-mini:10px;
+  --nx-fw-pri:600; --nx-fw-sec:500;
+}
+.nnx.open{width:min(1040px,97%);height:200px;border-radius:0 0 24px 24px;cursor:default;box-shadow:0 34px 90px rgba(0,0,0,.9)}
 
 /* collapsed pill */
 .nnx-pill{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:0 13px;opacity:1;transition:opacity .16s ease}
@@ -59,37 +63,37 @@
 /* ---- HOME: seamless surface, all modules equal height, 1px separators ---- */
 .nnx-home{display:flex;height:100%;align-items:stretch}
 .nnx-mod{padding:12px;display:flex;flex-direction:column;min-width:0;position:relative;height:100%}
-.nnx-mod + .nnx-mod::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);height:128px;width:1px;background:var(--nx-sep)}
+.nnx-mod + .nnx-mod::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);height:140px;width:1px;background:var(--nx-sep)}
 
-/* music — album art (138 square, r30) + controls half, both full height */
+/* music — album art (square, r22) + controls half, both full height — Swift .headline 13 for title+artist */
 .nnx-music{flex-direction:row;gap:10px;align-items:center;width:300px;flex-shrink:0}
-.nnx-cover{width:116px;height:116px;border-radius:22px;flex-shrink:0;position:relative;overflow:hidden;background:linear-gradient(155deg,#cfd6dd 0%,#8b97a4 38%,#3a4654 70%,#10151b 100%)}
+.nnx-cover{width:128px;height:128px;border-radius:22px;flex-shrink:0;position:relative;overflow:hidden;background:#222 center/cover no-repeat;image-rendering:auto}
 .nnx-cover .sp{position:absolute;bottom:8px;right:8px;width:22px;height:22px;border-radius:50%;background:#1db954;display:flex;align-items:center;justify-content:center}
 .nnx-cover .sp svg{width:14px;height:14px;fill:#000}
-.nnx-music-meta{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:flex-start;padding-left:4px;padding-top:10px}
-.nnx-music-meta .t{font-size:17px;font-weight:600;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.2;color:var(--nx-pri)}
-.nnx-music-meta .a{font-size:17px;color:var(--nx-sec);font-weight:500;margin-bottom:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.2}
+.nnx-music-meta{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:flex-start;padding-left:4px;padding-top:6px}
+.nnx-music-meta .t{font-size:var(--nx-fs-pri);font-weight:var(--nx-fw-pri);letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.25;color:var(--nx-pri)}
+.nnx-music-meta .a{font-size:var(--nx-fs-pri);color:var(--nx-sec);font-weight:var(--nx-fw-sec);margin-bottom:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.25}
 .nnx-scrub{height:5px;background:rgba(255,255,255,.25);border-radius:5px;position:relative;cursor:pointer}
 .nnx-scrub i{display:block;height:100%;background:#fff;border-radius:5px;width:18%;position:relative}
-.nnx-times{display:flex;justify-content:space-between;font-size:11px;font-weight:500;color:var(--nx-sec);margin-top:6px}
-.nnx-mctl{display:flex;gap:16px;justify-content:center;align-items:center;margin-top:12px}
+.nnx-times{display:flex;justify-content:space-between;font-size:var(--nx-fs-cap);font-weight:var(--nx-fw-sec);color:var(--nx-sec);margin-top:6px;font-variant-numeric:tabular-nums}
+.nnx-mctl{display:flex;gap:16px;justify-content:center;align-items:center;margin-top:10px}
 .nnx-mctl button{background:0;border:0;color:#fff;cursor:pointer;padding:0;display:inline-flex;align-items:center;justify-content:center}
 .nnx-mctl button svg{width:20px;height:20px;fill:#fff}
 .nnx-mctl .nnx-mplay svg{width:26px;height:26px}
 
-/* calendar — events top, day strip bottom */
-.nnx-cal{width:164px;flex-shrink:0;justify-content:flex-start}
-.nnx-cal .mh{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-.nnx-cal .mh b{font-size:13px;font-weight:600;color:var(--nx-pri)}
+/* calendar — events top, day strip bottom; spacing tuned so day numerals fit fully */
+.nnx-cal{width:170px;flex-shrink:0;justify-content:flex-start;padding-bottom:10px}
+.nnx-cal .mh{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px}
+.nnx-cal .mh b{font-size:var(--nx-fs-sec);font-weight:var(--nx-fw-pri);color:var(--nx-pri)}
 .nnx-cal .mh .ai{color:var(--nx-sec);display:inline-flex}
 .nnx-ev{margin-bottom:6px;padding-left:8px;border-left:2.5px solid #c07cf0}
 .nnx-ev.g{border-color:var(--nx-green)}
-.nnx-ev b{display:block;font-size:11px;font-weight:600;color:var(--nx-pri);line-height:1.25}
-.nnx-ev span{font-size:9px;color:var(--nx-sec)}
-.nnx-days{display:flex;gap:2px;margin-top:auto}
+.nnx-ev b{display:block;font-size:var(--nx-fs-cap);font-weight:var(--nx-fw-pri);color:var(--nx-pri);line-height:1.25}
+.nnx-ev span{font-size:var(--nx-fs-mini);color:var(--nx-sec);line-height:1.3}
+.nnx-days{display:flex;gap:3px;margin-top:auto;padding-top:6px}
 .nnx-day{flex:1;text-align:center}
-.nnx-day .dn{font-size:9px;font-weight:500;color:var(--nx-sec);display:block;margin-bottom:2px}
-.nnx-day b{display:block;font-size:11px;font-weight:500;color:var(--nx-pri);padding:4px 0;border-radius:8px}
+.nnx-day .dn{font-size:var(--nx-fs-mini);font-weight:var(--nx-fw-sec);color:var(--nx-sec);display:block;margin-bottom:3px;line-height:1.1}
+.nnx-day b{display:block;font-size:var(--nx-fs-cap);font-weight:var(--nx-fw-sec);color:var(--nx-pri);padding:4px 0;border-radius:8px;line-height:1.1}
 .nnx-day.on b{background:var(--nx-fill)}
 
 /* bookmarks — 2-col grid of 32px tiles */
@@ -100,12 +104,12 @@
 .nnx-bm-add{cursor:pointer;color:var(--nx-sec);font-size:18px;font-weight:300;border:0}
 
 /* notes — default = prompt + note list (edit opens on tap) */
-.nnx-notes{width:164px;flex-shrink:0;justify-content:flex-start;overflow:hidden}
-.nnx-notes .ph{font-size:12px;color:var(--nx-sec);margin-bottom:10px;cursor:text}
+.nnx-notes{width:170px;flex-shrink:0;justify-content:flex-start;overflow:hidden}
+.nnx-notes .ph{font-size:var(--nx-fs-sec);color:var(--nx-sec);margin-bottom:10px;cursor:text}
 .nnx-note{margin-bottom:9px;display:flex;align-items:flex-start;gap:6px}
 .nnx-note .nbody{flex:1;min-width:0}
-.nnx-note .ntext{font-size:12px;line-height:1.3;color:var(--nx-pri);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.nnx-note .nts{font-size:8px;color:rgba(255,255,255,.56);margin-top:3px;display:inline-block}
+.nnx-note .ntext{font-size:var(--nx-fs-sec);line-height:1.35;color:var(--nx-pri);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.nnx-note .nts{font-size:var(--nx-fs-mini);color:rgba(255,255,255,.56);margin-top:3px;display:inline-block}
 .nnx-note .nbar{height:2.5px;border-radius:2px;margin-top:3px;background:var(--nx-blue)}
 .nnx-note .nbar.r{background:#ff5c5c}.nnx-note .nbar.g{background:var(--nx-green)}
 .nnx-note .nchk{background:0;border:0;cursor:pointer;color:var(--nx-sec);padding:0;display:inline-flex;flex-shrink:0;margin-top:1px}
@@ -114,7 +118,7 @@
 .nnx-notes-edit{display:none;flex:1;flex-direction:row;gap:8px}
 .nnx-notes.editing .nnx-notes-list{display:none}
 .nnx-notes.editing .nnx-notes-edit{display:flex}
-.nnx-notes-edit textarea{flex:1;background:transparent;border:0;color:var(--nx-pri);font:inherit;font-size:12px;line-height:1.35;padding:0;resize:none;outline:0}
+.nnx-notes-edit textarea{flex:1;background:transparent;border:0;color:var(--nx-pri);font:inherit;font-size:var(--nx-fs-sec);line-height:1.35;padding:0;resize:none;outline:0}
 .nnx-edit-actions{display:flex;align-items:center;gap:7px;margin-top:6px}
 .nnx-edit-actions button{width:24px;height:24px;border-radius:50%;border:0;background:var(--nx-fill);color:var(--nx-pri);cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
 .nnx-edit-actions button svg{width:12px;height:12px}
@@ -126,9 +130,9 @@
 
 /* timer — space-between: mode pill / time+progress / controls */
 .nnx-timer{width:150px;flex-shrink:0;align-items:center;justify-content:space-between;text-align:center}
-.nnx-tph{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--nx-pri);padding:4px 9px;border-radius:999px;background:rgba(74,163,255,.12)}
+.nnx-tph{display:inline-flex;align-items:center;gap:5px;font-size:var(--nx-fs-cap);font-weight:var(--nx-fw-pri);color:var(--nx-pri);padding:4px 9px;border-radius:999px;background:rgba(74,163,255,.12)}
 .nnx-timer.rest .nnx-tph{background:rgba(52,211,153,.12)}
-.nnx-tph .sprint{color:var(--nx-sec);font-weight:500;font-size:10px}
+.nnx-tph .sprint{color:var(--nx-sec);font-weight:var(--nx-fw-sec);font-size:var(--nx-fs-mini)}
 .nnx-tmid{display:flex;flex-direction:column;align-items:center;gap:7px}
 .nnx-timer .tt{font-size:34px;font-weight:500;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums;line-height:1;color:var(--nx-pri)}
 .nnx-timer.focus.running .tt{color:var(--nx-blue)}.nnx-timer.rest.running .tt{color:var(--nx-green)}
@@ -145,7 +149,7 @@
 /* mirror — camera centered */
 .nnx-mirror{width:150px;flex-shrink:0;align-items:center;justify-content:center;cursor:pointer}
 .nnx-mirror .ic svg{width:30px;height:30px;fill:var(--nx-sec)}
-.nnx-mirror .lb{font-size:11px;color:var(--nx-sec);margin-top:9px}
+.nnx-mirror .lb{font-size:var(--nx-fs-cap);color:var(--nx-sec);margin-top:9px}
 .nnx-mirror video{width:100%;height:88%;object-fit:cover;border-radius:14px;display:none}
 .nnx-mirror.live{width:160px}
 .nnx-mirror.live .ic,.nnx-mirror.live .lb{display:none}
@@ -155,11 +159,11 @@
 .nnx-tray{display:flex;height:100%}
 .nnx-tray .ad{width:150px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;border-right:1px solid var(--nx-sep);color:var(--nx-sec)}
 .nnx-tray .ad svg{width:30px;height:30px;fill:var(--nx-sec)}
-.nnx-tray .ad .lb{font-size:12px;margin-top:9px}
-.nnx-tray .drop{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--nx-sec);border:2px dashed transparent;transition:border-color .15s,background .15s;border-radius:16px;margin:16px;font-size:13px}
+.nnx-tray .ad .lb{font-size:var(--nx-fs-sec);margin-top:9px}
+.nnx-tray .drop{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--nx-sec);border:2px dashed transparent;transition:border-color .15s,background .15s;border-radius:16px;margin:16px;font-size:var(--nx-fs-pri)}
 .nnx-tray .drop.over{border-color:var(--nx-blue);background:rgba(74,163,255,.08);color:#cfe6ff}
 .nnx-tray .drop svg{width:30px;height:30px;fill:var(--nx-sec);margin-bottom:10px}
-.nnx-tray .drop .nudge{font-size:11px;color:var(--nx-blue);margin-top:10px;display:none}
+.nnx-tray .drop .nudge{font-size:var(--nx-fs-cap);color:var(--nx-blue);margin-top:10px;display:none}
 .nnx-tray .drop.dropped .nudge{display:block}
 
 /* ---- GAME ---- */
@@ -173,13 +177,13 @@
 .nnx-clip-top{display:flex;gap:10px;margin-bottom:12px}
 .nnx-search{flex:1;display:flex;align-items:center;gap:8px;background:var(--nx-fill);border-radius:11px;padding:8px 12px;color:var(--nx-sec)}
 .nnx-search svg{width:14px;height:14px;fill:var(--nx-sec)}
-.nnx-search input{flex:1;background:0;border:0;color:var(--nx-pri);font:inherit;font-size:13px;outline:0}
-.nnx-clear{background:var(--nx-fill);border:0;border-radius:11px;color:var(--nx-pri);font-size:12px;padding:0 14px;cursor:pointer;white-space:nowrap}
+.nnx-search input{flex:1;background:0;border:0;color:var(--nx-pri);font:inherit;font-size:var(--nx-fs-pri);outline:0}
+.nnx-clear{background:var(--nx-fill);border:0;border-radius:11px;color:var(--nx-pri);font-size:var(--nx-fs-sec);padding:0 14px;cursor:pointer;white-space:nowrap}
 .nnx-cards{display:flex;gap:10px;overflow-x:auto;flex:1;padding-bottom:6px}
 .nnx-cb{width:172px;flex-shrink:0;background:rgba(255,255,255,.05);border-radius:14px;padding:11px;display:flex;flex-direction:column}
 .nnx-cb.pinned{background:rgba(74,163,255,.14)}
-.nnx-cb .txt{font-size:11.5px;line-height:1.45;color:var(--nx-pri);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.nnx-cb .meta{display:flex;align-items:center;gap:8px;margin-top:auto;padding-top:10px;font-size:10px;color:var(--nx-sec)}
+.nnx-cb .txt{font-size:var(--nx-fs-sec);line-height:1.45;color:var(--nx-pri);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.nnx-cb .meta{display:flex;align-items:center;gap:8px;margin-top:auto;padding-top:10px;font-size:var(--nx-fs-mini);color:var(--nx-sec)}
 .nnx-cb .meta .sp{flex:1}
 .nnx-cb .meta button{background:0;border:0;cursor:pointer;padding:0;display:inline-flex}
 .nnx-cb .meta button svg{width:13px;height:13px;fill:var(--nx-sec)}
@@ -187,7 +191,7 @@
 .nnx-cb .meta button.pin.on svg{fill:var(--nx-blue)}
 
 @media (max-width:760px){
-  .nnx.open{width:97%;height:300px}
+  .nnx.open{width:97%;height:320px}
   .nnx-home{overflow-x:auto}
   .nnx-mirror,.nnx-bm{display:none}
 }

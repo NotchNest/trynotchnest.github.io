@@ -37,21 +37,26 @@
 
   /* ---------- MUSIC (working scrubber + play) ---------- */
   var TRACKS = [
-    {t:'W.T.P.', a:'Eminem', dur:238},
-    {t:'Not Afraid', a:'Eminem', dur:248},
-    {t:'Till I Collapse', a:'Eminem', dur:297},
-    {t:'Lose Yourself', a:'Eminem', dur:326}
+    {t:'Lose Yourself', a:'Eminem', dur:322, art:'assets/music/lose-yourself.jpg'},
+    {t:'Without Me', a:'Eminem', dur:290, art:'assets/music/without-me.jpg'},
+    {t:'The Real Slim Shady', a:'Eminem', dur:284, art:'assets/music/real-slim-shady.jpg'},
+    {t:'Not Afraid', a:'Eminem', dur:248, art:'assets/music/not-afraid.jpg'},
+    {t:'Mockingbird', a:'Eminem', dur:251, art:'assets/music/mockingbird.jpg'},
+    {t:'Godzilla', a:'Eminem feat. Juice WRLD', dur:211, art:'assets/music/godzilla.jpg'}
   ];
-  var mi=0, mpos=42, mplaying=true, mtimer=null;
+  var mi=0, mpos=72, mplaying=true, mtimer=null;
   var mt=root.querySelector('.nnx-mtitle'), ma=root.querySelector('.nnx-martist');
   var mfill=root.querySelector('.nnx-mfill'), mcur=root.querySelector('.nnx-mcur'), mdur=root.querySelector('.nnx-mdur');
   var mplay=root.querySelector('.nnx-mplay');
+  var mcover=root.querySelector('.nnx-cover'), mpillart=root.querySelector('.nnx-pill-art');
   function fmt(s){ s=Math.max(0,Math.floor(s)); return Math.floor(s/60)+':'+('0'+(s%60)).slice(-2); }
   function renderMusic(){
     var tr=TRACKS[mi];
     if(mt) mt.textContent=tr.t; if(ma) ma.textContent=tr.a;
     if(mfill) mfill.style.width=(mpos/tr.dur*100)+'%';
     if(mcur) mcur.textContent=fmt(mpos); if(mdur) mdur.textContent=fmt(tr.dur);
+    if(mcover) mcover.style.backgroundImage="url('"+tr.art+"')";
+    if(mpillart) mpillart.style.backgroundImage="url('"+tr.art+"')";
     if(mplay) mplay.innerHTML = mplaying
       ? '<svg viewBox="0 0 24 24"><path d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg>'
       : '<svg viewBox="0 0 24 24"><path d="M7 5l12 7-12 7z"/></svg>';
