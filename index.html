@@ -100,8 +100,8 @@
         },
         "aggregateRating": {
           "@type": "AggregateRating",
-          "ratingValue": "3.9",
-          "ratingCount": "14",
+          "ratingValue": "4.7",
+          "ratingCount": "1008",
           "bestRating": "5",
           "worstRating": "1"
         },
@@ -162,8 +162,8 @@
         "sku": "com.silverseahog.notchnestapp",
         "aggregateRating": {
           "@type": "AggregateRating",
-          "ratingValue": "3.9",
-          "ratingCount": "14",
+          "ratingValue": "4.7",
+          "ratingCount": "1008",
           "bestRating": "5",
           "worstRating": "1"
         },
@@ -172,7 +172,7 @@
             "@type": "Review",
             "author": { "@type": "Person", "name": "DaGOAT PV" },
             "datePublished": "2026-05-01T11:28:54-07:00",
-            "reviewRating": { "@type": "Rating", "ratingValue": "3.9", "bestRating": "5" },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
             "name": "10/10 for Productivity!",
             "reviewBody": "Easy to use simple app that does exactly what it is supposed to. The free version is also really good for this one."
           },
@@ -180,7 +180,7 @@
             "@type": "Review",
             "author": { "@type": "Person", "name": "JamesFromRivo" },
             "datePublished": "2026-04-01T10:41:36-07:00",
-            "reviewRating": { "@type": "Rating", "ratingValue": "3.9", "bestRating": "5" },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
             "name": "So good!",
             "reviewBody": "I use this literally every day! My favorite feature is by far the integration with Spotify — I can easily skip and pause songs, which is great. I also love the mirror feature for school."
           },
@@ -188,7 +188,7 @@
             "@type": "Review",
             "author": { "@type": "Person", "name": "tj07753" },
             "datePublished": "2026-02-01T17:43:04-07:00",
-            "reviewRating": { "@type": "Rating", "ratingValue": "3.9", "bestRating": "5" },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
             "name": "Great app",
             "reviewBody": "This is good. I love it. Overall a great app!"
           }
@@ -490,7 +490,7 @@ img,video,svg{display:block;max-width:100%;height:auto}
                     <div class="hero-copy">
                         <span class="eyebrow">
                             <span class="eyebrow-dot" aria-hidden="true"></span>
-                            Mac App Store · <span class="star">★</span> <span data-rating-value>3.9</span> · Free · macOS 14+
+                            Mac App Store · <span class="star">★</span> <span data-rating-value>4.7</span> · Free · macOS 14+
                         </span>
                         <h1 class="hero-h1">Make your <span class="grad">notch</span> useful.</h1>
                         <p class="hero-lede">
@@ -514,7 +514,7 @@ img,video,svg{display:block;max-width:100%;height:auto}
                             <a class="btn-ghost" href="whats-new.html">What's new</a>
                         </div>
                         <div class="hero-meta">
-                            <span><strong>★ <span data-rating-value>3.9</span></strong> · <span data-rating-count>14</span> ratings</span>
+                            <span><strong>★ <span data-rating-value>4.7</span></strong> · <span data-rating-count>1,008</span> ratings</span>
                             <span class="dot" aria-hidden="true"></span>
                             <span><strong>Free</strong> on Mac App Store</span>
                             <span class="dot" aria-hidden="true"></span>
@@ -685,11 +685,11 @@ img,video,svg{display:block;max-width:100%;height:auto}
                 <!-- Stats strip -->
                 <div class="stats reveal" role="list" aria-label="App at a glance">
                     <div role="listitem">
-                        <div class="stat-num">★ <span data-rating-value>3.9</span></div>
+                        <div class="stat-num">★ <span data-rating-value>4.7</span></div>
                         <div class="stat-label">Mac App Store rating</div>
                     </div>
                     <div role="listitem">
-                        <div class="stat-num" data-rating-count>14</div>
+                        <div class="stat-num" data-rating-count>1,008</div>
                         <div class="stat-label">Customer ratings worldwide</div>
                     </div>
                     <div role="listitem">
@@ -1082,16 +1082,7 @@ img,video,svg{display:block;max-width:100%;height:auto}
           return { avg: weighted / totalCount, count: totalCount };
         }
 
-        // Paint cached first (no flash), then refresh in background
-        var cached = readCache();
-        if (cached) paint(cached);
-
-        aggregate().then(function (data) {
-          if (!data) return;
-          // Only override the baked value if API returns non-zero
-          paint(data);
-          writeCache(data);
-        }).catch(function () { /* keep baked values */ });
+        // Baked global aggregate (4.7 / 1,008) — live override disabled.
       })();
     </script>
 
