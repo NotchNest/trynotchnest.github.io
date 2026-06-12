@@ -58,7 +58,7 @@
   var mfill=root.querySelector('.nnx-mfill'), mcur=root.querySelector('.nnx-mcur'), mdur=root.querySelector('.nnx-mdur');
   var mplay=root.querySelector('.nnx-mplay');
   var mcover=root.querySelector('.nnx-cover'), mpillart=root.querySelector('.nnx-pill-art');
-  function fmt(s){ s=Math.max(0,Math.floor(s)); return Math.floor(s/60)+':'+('0'+(s%60)).slice(-2); }
+  function fmt(s){ s=Math.max(0,Math.floor(s)); return ('0'+Math.floor(s/60)).slice(-2)+':'+('0'+(s%60)).slice(-2); }
   function renderMusic(){
     var tr=TRACKS[mi];
     if(mt) mt.textContent=tr.t; if(ma) ma.textContent=tr.a;
