@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>What's New in NotchNest – Mac Notch App Updates & Changelog</title>
     <meta name="description" content="See the latest NotchNest updates and new features. NotchNest is the mac notch app that turns your MacBook's notch into a productivity hub with calendar, timer, notes & music widgets." />
     <meta name="author" content="NotchNest" />
@@ -154,6 +154,26 @@
             margin-bottom: 2rem;
         }
 
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.75);
+            transition: color 0.2s ease;
+        }
+
+        .back-button:hover {
+            color: #ffffff;
+        }
+
+        .back-button svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
         .whats-new-badge {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: #ffffff;
@@ -191,7 +211,7 @@
             <!-- Back Link -->
             <nav class="back-link-section">
                 <a href="index.html" class="back-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                     </svg>

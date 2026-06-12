@@ -202,8 +202,34 @@
 .nnx-cb .meta button.del svg{fill:#ff5c5c}
 .nnx-cb .meta button.pin.on svg{fill:var(--nx-blue);opacity:1}
 
+/* ---- RESPONSIVE: scale the whole open notch down to fit, never scroll ----
+   The open layout is a fixed ~1040px wide row of modules. Below ~1080px the
+   viewport can't hold it, so instead of clipping/scrolling we render the full
+   design width and scale the notch down, anchored to the top-centre (like a
+   real notch hanging off the menu bar). transform-origin 50% 0 keeps it
+   centred horizontally and pinned to the top edge. */
+@media (max-width:1080px){
+  .hero-centered .nnx-wrap{min-height:225px}
+  .nnx-home{overflow:visible}
+  .nnx.open{width:1040px;transform-origin:50% 0;transform:translateX(-50%) scale(.84)}
+}
+@media (max-width:920px){
+  .hero-centered .nnx-wrap{min-height:200px}
+  .nnx.open{transform:translateX(-50%) scale(.70)}
+}
 @media (max-width:760px){
-  .nnx.open{width:97%;height:320px}
-  .nnx-home{overflow-x:auto}
-  .nnx-mirror,.nnx-bm{display:none}
+  .hero-centered .nnx-wrap{min-height:175px}
+  .nnx.open{transform:translateX(-50%) scale(.56)}
+}
+@media (max-width:600px){
+  .hero-centered .nnx-wrap{min-height:150px}
+  .nnx.open{transform:translateX(-50%) scale(.45)}
+}
+@media (max-width:480px){
+  .hero-centered .nnx-wrap{min-height:135px}
+  .nnx.open{transform:translateX(-50%) scale(.36)}
+}
+@media (max-width:380px){
+  .hero-centered .nnx-wrap{min-height:125px}
+  .nnx.open{transform:translateX(-50%) scale(.31)}
 }
