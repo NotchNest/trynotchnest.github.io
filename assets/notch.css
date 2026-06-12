@@ -192,8 +192,9 @@
 .nnx-cb{width:150px;flex-shrink:0;background:rgba(255,255,255,.06);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;justify-content:space-between}
 .nnx-cb.pinned{background:rgba(74,163,255,.14)}
 .nnx-cb .txt{font-size:var(--nx-fs-sec);font-weight:var(--nx-fw-sec);line-height:1.35;color:var(--nx-pri);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.nnx-cb .meta{display:flex;align-items:center;gap:8px;margin-top:6px;font-size:var(--nx-fs-cap);color:var(--nx-sec)}
-.nnx-cb .meta .sp{flex:1}
+.nnx-cb .meta{display:flex;align-items:center;gap:6px;margin-top:6px;font-size:var(--nx-fs-cap);color:var(--nx-sec);white-space:nowrap;overflow:hidden}
+.nnx-cb .meta>span:first-child{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.nnx-cb .meta .sp{display:none}
 .nnx-cb .meta button{background:0;border:0;cursor:pointer;padding:0;display:inline-flex;opacity:0;transition:opacity .12s ease}
 .nnx-cb:hover .meta button{opacity:1}
 .nnx-cb .meta button svg{width:13px;height:13px;fill:var(--nx-sec)}
