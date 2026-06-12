@@ -157,8 +157,8 @@
 .nnx-mirror .ic svg{width:38px;height:38px;color:var(--nx-pri);stroke:currentColor;fill:none}
 .nnx-mirror .ic svg circle[fill="currentColor"]{fill:var(--nx-pri)}
 .nnx-mirror .lb{font-size:var(--nx-fs-cap);color:var(--nx-sec);margin-top:8px}
-.nnx-mirror video{width:120px;height:120px;object-fit:cover;border-radius:50%;display:none}
-.nnx-mirror.live{width:160px}
+.nnx-mirror video{width:112px;height:112px;object-fit:cover;border-radius:50%;display:none;margin:0 auto}
+.nnx-mirror.live{width:150px;padding:4px 16px}
 .nnx-mirror.live .ic,.nnx-mirror.live .lb{display:none}
 .nnx-mirror.live video{display:block}
 
