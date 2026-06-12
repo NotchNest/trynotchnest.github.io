@@ -64,8 +64,8 @@
 
 /* ---- HOME: seamless surface, all modules equal height, 1px separators ---- */
 .nnx-home{display:flex;height:100%;align-items:center}
-.nnx-mod{padding:6px 12px;display:flex;flex-direction:column;min-width:0;position:relative;height:140px}
-.nnx-mod + .nnx-mod::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);height:140px;width:1px;background:var(--nx-sep)}
+.nnx-mod{padding:4px 12px;display:flex;flex-direction:column;min-width:0;position:relative;height:152px}
+.nnx-mod + .nnx-mod::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);height:152px;width:1px;background:var(--nx-sep)}
 
 /* music — album art (square, r22) + controls half, both full height — Swift .headline 13 for title+artist */
 .nnx-music{flex-direction:row;gap:10px;align-items:center;width:300px;flex-shrink:0}
